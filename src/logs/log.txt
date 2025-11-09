@@ -1,0 +1,1382 @@
+ExeStack:
+{ bool a | (int v ; (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v)))) }SymTable:
+{}Out:
+[]
+ExeStack:
+{ (int v ; (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v)))) }SymTable:
+{a=false}Out:
+[]
+ExeStack:
+{ int v | (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v))) }SymTable:
+{a=false}Out:
+[]
+ExeStack:
+{ (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v))) }SymTable:
+{a=false, v=0}Out:
+[]
+ExeStack:
+{ a=true | ((if( a) then(v=2) else(v=3)) ; print(v)) }SymTable:
+{a=false, v=0}Out:
+[]
+ExeStack:
+{ ((if( a) then(v=2) else(v=3)) ; print(v)) }SymTable:
+{a=true, v=0}Out:
+[]
+ExeStack:
+{ (if( a) then(v=2) else(v=3)) | print(v) }SymTable:
+{a=true, v=0}Out:
+[]
+ExeStack:
+{ v=2 | print(v) }SymTable:
+{a=true, v=0}Out:
+[]
+ExeStack:
+{ print(v) }SymTable:
+{a=true, v=2}Out:
+[]
+ExeStack:
+{  }SymTable:
+{a=true, v=2}Out:
+[2]
+ExeStack:
+{ int a | (int v ; ((if( a) then(v=2) else(v=3)) ; print(v))) }SymTable:
+{}Out:
+[]
+ExeStack:
+{ (int v ; ((if( a) then(v=2) else(v=3)) ; print(v))) }SymTable:
+{a=0}Out:
+[]
+ExeStack:
+{ int v | ((if( a) then(v=2) else(v=3)) ; print(v)) }SymTable:
+{a=0}Out:
+[]
+ExeStack:
+{ ((if( a) then(v=2) else(v=3)) ; print(v)) }SymTable:
+{a=0, v=0}Out:
+[]
+ExeStack:
+{ (if( a) then(v=2) else(v=3)) | print(v) }SymTable:
+{a=0, v=0}Out:
+[]
+ExeStack:
+{ int v | (v=2 ; print(v)) }
+SymTable:
+{}
+Out:
+[]
+
+ExeStack:
+{ (v=2 ; print(v)) }
+SymTable:
+{v=0}
+Out:
+[]
+
+ExeStack:
+{ v=2 | print(v) }
+SymTable:
+{v=0}
+Out:
+[]
+
+ExeStack:
+{ print(v) }
+SymTable:
+{v=2}
+Out:
+[]
+
+ExeStack:
+{  }
+SymTable:
+{v=2}
+Out:
+[2]
+
+ExeStack:
+{ bool a | (int v ; (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v)))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int v ; (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v)))) }
+SymTable:
+{a=false}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ int v | (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v))) }
+SymTable:
+{a=false}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v))) }
+SymTable:
+{a=false, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ a=true | ((if( a) then(v=2) else(v=3)) ; print(v)) }
+SymTable:
+{a=false, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ ((if( a) then(v=2) else(v=3)) ; print(v)) }
+SymTable:
+{a=true, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (if( a) then(v=2) else(v=3)) | print(v) }
+SymTable:
+{a=true, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ v=2 | print(v) }
+SymTable:
+{a=true, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ print(v) }
+SymTable:
+{a=true, v=2}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{  }
+SymTable:
+{a=true, v=2}
+Out:
+[2]
+FileTable:
+{}
+
+ExeStack:
+{ int a | (int v ; ((if( a) then(v=2) else(v=3)) ; print(v))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int v ; ((if( a) then(v=2) else(v=3)) ; print(v))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ int v | ((if( a) then(v=2) else(v=3)) ; print(v)) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ ((if( a) then(v=2) else(v=3)) ; print(v)) }
+SymTable:
+{a=0, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (if( a) then(v=2) else(v=3)) | print(v) }
+SymTable:
+{a=0, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ string varf | (varf=StringValue[value=test.in] ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (varf=StringValue[value=test.in] ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{varf=StringValue[value=]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ varf=StringValue[value=test.in] | (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=StringValue[value=]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ OpenRFileStatement[expression=varf] | (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ string varf | (varf=StringValue[value=test.in] ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (varf=StringValue[value=test.in] ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{varf=StringValue[value=]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ varf=StringValue[value=test.in] | (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=StringValue[value=]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ OpenRFileStatement[expression=varf] | (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ int varc | (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ ReadFileStatement[exp=varf, var_name=varc] | (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=15}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ print(varc) | (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])) }
+SymTable:
+{varf=StringValue[value=test.in], varc=15}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])) }
+SymTable:
+{varf=StringValue[value=test.in], varc=15}
+Out:
+[15]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ ReadFileStatement[exp=varf, var_name=varc] | (print(varc) ; CloseRFileStatement[expression=varf]) }
+SymTable:
+{varf=StringValue[value=test.in], varc=15}
+Out:
+[15]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ (print(varc) ; CloseRFileStatement[expression=varf]) }
+SymTable:
+{varf=StringValue[value=test.in], varc=50}
+Out:
+[15]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ print(varc) | CloseRFileStatement[expression=varf] }
+SymTable:
+{varf=StringValue[value=test.in], varc=50}
+Out:
+[15]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ CloseRFileStatement[expression=varf] }
+SymTable:
+{varf=StringValue[value=test.in], varc=50}
+Out:
+[15, 50]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{  }
+SymTable:
+{varf=StringValue[value=test.in], varc=50}
+Out:
+[15, 50]
+FileTable:
+{}
+
+ExeStack:
+{ string varf | (varf=StringValue[value=test.in] ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (varf=StringValue[value=test.in] ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{varf=StringValue[value=]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ varf=StringValue[value=test.in] | (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=StringValue[value=]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ OpenRFileStatement[expression=varf] | (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ int varc | (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ ReadFileStatement[exp=varf, var_name=varc] | (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ print(varc) | (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ ReadFileStatement[exp=varf, var_name=varc] | (print(varc) ; CloseRFileStatement[expression=varf]) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ (print(varc) ; CloseRFileStatement[expression=varf]) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ print(varc) | CloseRFileStatement[expression=varf] }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{ CloseRFileStatement[expression=varf] }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0, 0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@3feba861}
+
+ExeStack:
+{  }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0, 0]
+FileTable:
+{}
+
+ExeStack:
+{ int a | (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ int b | (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ a=2 + 3 * 5 | (b=a + 1 ; print(b)) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (b=a + 1 ; print(b)) }
+SymTable:
+{a=17, b=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ b=a + 1 | print(b) }
+SymTable:
+{a=17, b=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ print(b) }
+SymTable:
+{a=17, b=18}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{  }
+SymTable:
+{a=17, b=18}
+Out:
+[18]
+FileTable:
+{}
+
+ExeStack:
+{ int v | (v=2 ; print(v)) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (v=2 ; print(v)) }
+SymTable:
+{v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ v=2 | print(v) }
+SymTable:
+{v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ print(v) }
+SymTable:
+{v=2}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{  }
+SymTable:
+{v=2}
+Out:
+[2]
+FileTable:
+{}
+
+ExeStack:
+{ string varf | (varf=StringValue[value=test.in] ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (varf=StringValue[value=test.in] ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{varf=StringValue[value=]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ varf=StringValue[value=test.in] | (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=StringValue[value=]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ OpenRFileStatement[expression=varf] | (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ int varc | (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))) }
+SymTable:
+{varf=StringValue[value=test.in]}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ ReadFileStatement[exp=varf, var_name=varc] | (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ print(varc) | (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ ReadFileStatement[exp=varf, var_name=varc] | (print(varc) ; CloseRFileStatement[expression=varf]) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ (print(varc) ; CloseRFileStatement[expression=varf]) }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ print(varc) | CloseRFileStatement[expression=varf] }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ CloseRFileStatement[expression=varf] }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0, 0]
+FileTable:
+{StringValue[value=test.in]=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{  }
+SymTable:
+{varf=StringValue[value=test.in], varc=0}
+Out:
+[0, 0]
+FileTable:
+{}
+
+ExeStack:
+{ string varf | (varf=test.in ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (varf=test.in ; (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))))) }
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ varf=test.in | (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (OpenRFileStatement[expression=varf] ; (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))))) }
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ OpenRFileStatement[expression=varf] | (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int varc ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))))) }
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ int varc | (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))) }
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])))) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ ReadFileStatement[exp=varf, var_name=varc] | (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ (print(varc) ; (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf]))) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ print(varc) | (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ (ReadFileStatement[exp=varf, var_name=varc] ; (print(varc) ; CloseRFileStatement[expression=varf])) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ ReadFileStatement[exp=varf, var_name=varc] | (print(varc) ; CloseRFileStatement[expression=varf]) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ (print(varc) ; CloseRFileStatement[expression=varf]) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ print(varc) | CloseRFileStatement[expression=varf] }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{ CloseRFileStatement[expression=varf] }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0, 0]
+FileTable:
+{test.in=java.io.BufferedReader@7cc355be}
+
+ExeStack:
+{  }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0, 0]
+FileTable:
+{}
+
+ExeStack:
+{ bool a | (int v ; (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v)))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int v ; (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v)))) }
+SymTable:
+{a=false}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ int v | (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v))) }
+SymTable:
+{a=false}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (a=true ; ((if( a) then(v=2) else(v=3)) ; print(v))) }
+SymTable:
+{a=false, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ a=true | ((if( a) then(v=2) else(v=3)) ; print(v)) }
+SymTable:
+{a=false, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ ((if( a) then(v=2) else(v=3)) ; print(v)) }
+SymTable:
+{a=true, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (if( a) then(v=2) else(v=3)) | print(v) }
+SymTable:
+{a=true, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ v=2 | print(v) }
+SymTable:
+{a=true, v=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ print(v) }
+SymTable:
+{a=true, v=2}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{  }
+SymTable:
+{a=true, v=2}
+Out:
+[2]
+FileTable:
+{}
+
+ExeStack:
+{ string varf | (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ varf=test.in | (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ openRFile(varf) | (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ int varc | (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ readFile(varf, varc) | (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ print(varc) | (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ readFile(varf, varc) | (print(varc) ; closeRFile(varf)) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ (print(varc) ; closeRFile(varf)) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ print(varc) | closeRFile(varf) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{ closeRFile(varf) }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0, 0]
+FileTable:
+{test.in=java.io.BufferedReader@4e50df2e}
+
+ExeStack:
+{  }
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[0, 0]
+FileTable:
+{}
+
+ExeStack:
+{ int a | (int b ; (a=10 ; (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)))))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (int b ; (a=10 ; (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)))))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ int b | (a=10 ; (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result))))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (a=10 ; (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result))))) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ a=10 | (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)))) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)))) }
+SymTable:
+{a=10, b=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ b=7 | (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result))) }
+SymTable:
+{a=10, b=0}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result))) }
+SymTable:
+{a=10, b=7}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ string result | ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)) }
+SymTable:
+{a=10, b=7}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)) }
+SymTable:
+{result=, a=10, b=7}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ (if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) | print(result) }
+SymTable:
+{result=, a=10, b=7}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ result=a is greater or equal than b | print(result) }
+SymTable:
+{result=, a=10, b=7}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{ print(result) }
+SymTable:
+{result=a is greater or equal than b, a=10, b=7}
+Out:
+[]
+FileTable:
+{}
+
+ExeStack:
+{  }
+SymTable:
+{result=a is greater or equal than b, a=10, b=7}
+Out:
+[a is greater or equal than b]
+FileTable:
+{}
+
