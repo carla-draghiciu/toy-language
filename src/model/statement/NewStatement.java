@@ -17,7 +17,7 @@ public record NewStatement(String var_name, Expression expression) implements St
         if (!((state.symTable().getVariableType(var_name)) instanceof RefType)) {
             throw new MismatchException("Variable " + var_name + " is not of type RefType");
         }
-        Value exp_value = expression.evaluate(state.symTable());
+        Value exp_value = expression.evaluate(state.symTable(), state.heapTable());
         RefValue var_value = (RefValue) state.symTable().getVariableValue(var_name);
         if (exp_value.getType().getClass() != var_value.getLocationType().getClass()) {
             throw new MismatchException("Variable " + var_name + " is not of type " + exp_value.getClass());

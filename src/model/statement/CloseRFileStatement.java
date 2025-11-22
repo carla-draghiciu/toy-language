@@ -13,7 +13,7 @@ import java.io.BufferedReader;
 public record CloseRFileStatement(Expression expression) implements Statement {
     @Override
     public ProgramState execute(ProgramState state) {
-        Value val = expression.evaluate(state.symTable());
+        Value val = expression.evaluate(state.symTable(), state.heapTable());
         if (!(val instanceof StringValue)) {
             throw new MismatchException("Not a string value");
         }

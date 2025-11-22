@@ -11,7 +11,7 @@ import model.value.Value;
 public record IfStatement(Expression condition, Statement thenStatement, Statement elseStatement) implements Statement {
     @Override
     public ProgramState execute(ProgramState state) {
-        Value val = condition.evaluate(state.symTable());
+        Value val = condition.evaluate(state.symTable(), state.heapTable());
         if (!(val.getType() instanceof BoolType)) {
             throw new MismatchException("If condition is not boolean");
         }

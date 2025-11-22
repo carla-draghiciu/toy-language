@@ -31,6 +31,16 @@ public class HeapMemory implements Memory {
     }
 
     @Override
+    public boolean addressExists(int address) {
+        return memory.exists(address);
+    }
+
+    @Override
+    public Value getValue(int location) {
+        return  memory.get(location);
+    }
+
+    @Override
     public String toString() {
         return memory.toString();
     }

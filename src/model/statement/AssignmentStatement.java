@@ -13,7 +13,7 @@ public record AssignmentStatement(String name, Expression expression) implements
         if (!state.symTable().isDefined(name)) {
             throw new UndeclaredException("Undefined variable");
         }
-        Value exp = expression.evaluate(state.symTable());
+        Value exp = expression.evaluate(state.symTable(), state.heapTable());
 
         var rightType = exp.getType();
         var leftType = state.symTable().getVariableType(name);

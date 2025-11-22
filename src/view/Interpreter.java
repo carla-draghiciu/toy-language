@@ -1,9 +1,6 @@
 package view;
 import controller.Controller;
-import model.expression.ArithmeticExpression;
-import model.expression.RelationalExpression;
-import model.expression.ValueExpression;
-import model.expression.VariableExpression;
+import model.expression.*;
 import model.statement.*;
 import model.type.BoolType;
 import model.type.IntType;
@@ -155,8 +152,8 @@ public class Interpreter {
                                 new CompoundStatement(
                                         new NewStatement("a", new VariableExpression("v")),
                                         new CompoundStatement(
-                                                new PrintStatement(new VariableExpression("v")),
-                                                new PrintStatement(new VariableExpression("a"))
+                                                new PrintStatement(new ReadHeapExpression(new VariableExpression("v"))),
+                                                new PrintStatement(new ArithmeticExpression(new ReadHeapExpression(new ReadHeapExpression(new VariableExpression("a"))), new ValueExpression(new IntValue(5)), '+'))
                                         )
                                 )
                         )

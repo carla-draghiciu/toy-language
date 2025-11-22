@@ -14,7 +14,7 @@ import java.io.FileReader;
 public record OpenRFileStatement(Expression expression) implements Statement {
     @Override
     public ProgramState execute(ProgramState programState) {
-        Value val = expression.evaluate(programState.symTable());
+        Value val = expression.evaluate(programState.symTable(), programState.heapTable());
         if (!(val instanceof StringValue)) {
             throw new MismatchException("Not a string value");
         }

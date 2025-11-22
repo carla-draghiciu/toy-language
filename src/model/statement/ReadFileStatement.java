@@ -24,7 +24,7 @@ public record ReadFileStatement(Expression exp, String var_name) implements Stat
             throw new MismatchException("Value " + var_name + " is not an integer");
         }
 
-        Value val = exp.evaluate(state.symTable());
+        Value val = exp.evaluate(state.symTable(), state.heapTable());
         if (!(val instanceof StringValue)) {
             throw new MismatchException("Value " + val + " is not a string");
         }

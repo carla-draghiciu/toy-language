@@ -3,15 +3,16 @@ package model.expression;
 import model.exception.DivisionException;
 import model.exception.MismatchException;
 import model.exception.UnknownInputException;
+import model.state.Memory;
 import model.state.SymbolTable;
 import model.value.IntValue;
 import model.value.Value;
 
 public record ArithmeticExpression(Expression left, Expression right, char operator) implements Expression {
     @Override
-    public Value evaluate(SymbolTable symbolTable) {
-        Value leftValue = left.evaluate(symbolTable);
-        Value rightValue = right.evaluate(symbolTable);
+    public Value evaluate(SymbolTable symbolTable, Memory heapTable) {
+        Value leftValue = left.evaluate(symbolTable, heapTable);
+        Value rightValue = right.evaluate(symbolTable, heapTable);
 
         if (!(leftValue instanceof IntValue && rightValue instanceof IntValue)) {
             throw new MismatchException("Not an integer");

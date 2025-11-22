@@ -2,15 +2,16 @@ package model.expression;
 
 import model.exception.MismatchException;
 import model.exception.UnknownInputException;
+import model.state.Memory;
 import model.state.SymbolTable;
 import model.value.BoolValue;
 import model.value.Value;
 
 public record LogicExpression(Expression left, Expression right, String operator) implements Expression {
     @Override
-    public Value evaluate(SymbolTable symbolTable) {
-        Value leftValue = left.evaluate(symbolTable);
-        Value rightValue = right.evaluate(symbolTable);
+    public Value evaluate(SymbolTable symbolTable, Memory heapTable) {
+        Value leftValue = left.evaluate(symbolTable, heapTable);
+        Value rightValue = right.evaluate(symbolTable, heapTable);
 
         if (!(leftValue instanceof BoolValue && rightValue instanceof BoolValue)) {
             throw new MismatchException("Not a boolean value");

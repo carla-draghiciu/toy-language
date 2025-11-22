@@ -6,7 +6,7 @@ import model.state.ProgramState;
 public record PrintStatement(Expression expression) implements Statement {
     @Override
     public ProgramState execute(ProgramState state) {
-        state.out().add(expression.evaluate(state.symTable()));
+        state.out().add(expression.evaluate(state.symTable(), state.heapTable()));
         return state;
     }
 
