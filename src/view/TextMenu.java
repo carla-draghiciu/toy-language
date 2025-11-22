@@ -3,11 +3,12 @@ package view;
 import view.commands.Command;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class TextMenu {
-    private Map<String, Command> commands = new HashMap<>();
+    private Map<String, Command> commands = new LinkedHashMap<>();
 
     public void addCommand(Command command) {
         commands.put(command.getKey(), command);

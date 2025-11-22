@@ -160,6 +160,20 @@ public class Interpreter {
                 )
         );
 
+        Statement ex11 = new CompoundStatement(
+                new VariableDeclarationStatement(new RefType(new IntType()), "v"),
+                new CompoundStatement(
+                        new NewStatement("v", new ValueExpression(new IntValue(20))),
+                        new CompoundStatement(
+                                new PrintStatement(new ReadHeapExpression(new VariableExpression("v"))),
+                                new CompoundStatement(
+                                        new HeapWritingStatement("v", new ValueExpression(new IntValue(30))),
+                                        new PrintStatement(new ArithmeticExpression(new ReadHeapExpression(new VariableExpression("v")), new ValueExpression(new IntValue(5)), '+'))
+                                )
+                        )
+                )
+        );
+
         controller.addNewProgram(ex1);
         controller.addNewProgram(ex2);
         controller.addNewProgram(ex3);
@@ -170,6 +184,7 @@ public class Interpreter {
         controller.addNewProgram(ex8);
         controller.addNewProgram(ex9);
         controller.addNewProgram(ex10);
+        controller.addNewProgram(ex11);
 
         TextMenu tm = new TextMenu();
         tm.addCommand(new ExitCommand("0", "exit"));
@@ -183,6 +198,7 @@ public class Interpreter {
         tm.addCommand(new RunExample("8", ex8.toString(), controller));
         tm.addCommand(new RunExample("9", ex9.toString(), controller));
         tm.addCommand(new RunExample("10", ex10.toString(), controller));
+        tm.addCommand(new RunExample("11", ex11.toString(), controller));
         tm.show();
     }
 }
