@@ -10,6 +10,10 @@ public record RefValue(int address, Type locationType) implements Value {
         return new RefType(locationType);
     }
 
+    public Type getLocationType() {
+        return locationType;
+    }
+
     @Override
     public boolean equals(Value other) {
         if (!(other instanceof IntValue)) {

@@ -24,7 +24,7 @@ public record AssignmentStatement(String name, Expression expression) implements
 
         state.symTable().setValue(name, exp);
         return state;
-    }// TODO: is defined?
+    }
 
     @Override
     public String toString() {

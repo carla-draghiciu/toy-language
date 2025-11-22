@@ -10,7 +10,7 @@ public record Controller(Repository repository) {
         ExecutionStack execStack = new LinkedListExecutionStack();
         execStack.push(statement);
 
-        ProgramState newState = new ProgramState(execStack, new MapSymbolTable(), new ArrayListOut(), new MapFileTable());
+        ProgramState newState = new ProgramState(execStack, new MapSymbolTable(), new ArrayListOut(), new MapFileTable(), new HeapMemory());
         repository.addProgramState(newState);
     }
 

@@ -448,3 +448,523 @@ Out:
 FileTable:
 {}
 
+ExeStack:
+{ int a | (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{ (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{ int b | (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{ (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{ a=2 + 3 * 5 | (b=a + 1 ; print(b)) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{ (b=a + 1 ; print(b)) }
+SymTable:
+{a=17, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{ b=a + 1 | print(b) }
+SymTable:
+{a=17, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{ print(b) }
+SymTable:
+{a=17, b=18}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{  }
+SymTable:
+{a=17, b=18}
+Out:
+[18]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@3feba861
+ExeStack:
+{ int a | (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{ (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{ int b | (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{ (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{ a=2 + 3 * 5 | (b=a + 1 ; print(b)) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{ (b=a + 1 ; print(b)) }
+SymTable:
+{a=17, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{ b=a + 1 | print(b) }
+SymTable:
+{a=17, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{ print(b) }
+SymTable:
+{a=17, b=18}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{  }
+SymTable:
+{a=17, b=18}
+Out:
+[18]
+FileTable:
+{}
+HeapTable:
+model.state.HeapMemory@723279cf
+ExeStack:
+{ int a | (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ int b | (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ a=2 + 3 * 5 | (b=a + 1 ; print(b)) }
+SymTable:
+{a=0, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (b=a + 1 ; print(b)) }
+SymTable:
+{a=17, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ b=a + 1 | print(b) }
+SymTable:
+{a=17, b=0}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ print(b) }
+SymTable:
+{a=17, b=18}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{  }
+SymTable:
+{a=17, b=18}
+Out:
+[18]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ Ref(int) v | (new(v, 20) ; print(v)) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (new(v, 20) ; print(v)) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ new(v, 20) | print(v) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ Ref(int) v | (new(v, 20) ; print(v)) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (new(v, 20) ; print(v)) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ new(v, 20) | print(v) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ Ref(int) v | (new(v, 20) ; print(v)) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (new(v, 20) ; print(v)) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ new(v, 20) | print(v) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ Ref(int) v | (new(v, 20) ; print(v)) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (new(v, 20) ; print(v)) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ new(v, 20) | print(v) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ print(v) }
+SymTable:
+{v=RefValue[address=1, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{1=20}
+ExeStack:
+{  }
+SymTable:
+{v=RefValue[address=1, locationType=int]}
+Out:
+[RefValue[address=1, locationType=int]]
+FileTable:
+{}
+HeapTable:
+{1=20}
+ExeStack:
+{ Ref(int) v | (new(v, 20) ; (Ref(Ref(int)) a ; (new(a, v) ; (print(v) ; print(a))))) }
+SymTable:
+{}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (new(v, 20) ; (Ref(Ref(int)) a ; (new(a, v) ; (print(v) ; print(a))))) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ new(v, 20) | (Ref(Ref(int)) a ; (new(a, v) ; (print(v) ; print(a)))) }
+SymTable:
+{v=RefValue[address=0, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{}
+ExeStack:
+{ (Ref(Ref(int)) a ; (new(a, v) ; (print(v) ; print(a)))) }
+SymTable:
+{v=RefValue[address=1, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{1=20}
+ExeStack:
+{ Ref(Ref(int)) a | (new(a, v) ; (print(v) ; print(a))) }
+SymTable:
+{v=RefValue[address=1, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{1=20}
+ExeStack:
+{ (new(a, v) ; (print(v) ; print(a))) }
+SymTable:
+{a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{1=20}
+ExeStack:
+{ new(a, v) | (print(v) ; print(a)) }
+SymTable:
+{a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{1=20}
+ExeStack:
+{ (print(v) ; print(a)) }
+SymTable:
+{a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{1=20, 2=RefValue[address=1, locationType=int]}
+ExeStack:
+{ print(v) | print(a) }
+SymTable:
+{a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:
+[]
+FileTable:
+{}
+HeapTable:
+{1=20, 2=RefValue[address=1, locationType=int]}
+ExeStack:
+{ print(a) }
+SymTable:
+{a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:
+[RefValue[address=1, locationType=int]]
+FileTable:
+{}
+HeapTable:
+{1=20, 2=RefValue[address=1, locationType=int]}
+ExeStack:
+{  }
+SymTable:
+{a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:
+[RefValue[address=1, locationType=int], RefValue[address=2, locationType=Ref(int)]]
+FileTable:
+{}
+HeapTable:
+{1=20, 2=RefValue[address=1, locationType=int]}

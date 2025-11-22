@@ -7,6 +7,7 @@ import model.expression.VariableExpression;
 import model.statement.*;
 import model.type.BoolType;
 import model.type.IntType;
+import model.type.RefType;
 import model.type.StringType;
 import model.value.BoolValue;
 import model.value.IntValue;
@@ -145,6 +146,23 @@ public class Interpreter {
                 )
         );
 
+        Statement ex10 = new CompoundStatement(
+                new VariableDeclarationStatement(new RefType(new IntType()), "v"),
+                new CompoundStatement(
+                        new NewStatement("v", new ValueExpression(new IntValue(20))),
+                        new CompoundStatement(
+                                new VariableDeclarationStatement(new RefType(new RefType(new IntType())), "a"),
+                                new CompoundStatement(
+                                        new NewStatement("a", new VariableExpression("v")),
+                                        new CompoundStatement(
+                                                new PrintStatement(new VariableExpression("v")),
+                                                new PrintStatement(new VariableExpression("a"))
+                                        )
+                                )
+                        )
+                )
+        );
+
         controller.addNewProgram(ex1);
         controller.addNewProgram(ex2);
         controller.addNewProgram(ex3);
@@ -154,6 +172,7 @@ public class Interpreter {
         controller.addNewProgram(ex7);
         controller.addNewProgram(ex8);
         controller.addNewProgram(ex9);
+        controller.addNewProgram(ex10);
 
         TextMenu tm = new TextMenu();
         tm.addCommand(new ExitCommand("0", "exit"));
@@ -166,6 +185,7 @@ public class Interpreter {
         tm.addCommand(new RunExample("7", ex7.toString(), controller));
         tm.addCommand(new RunExample("8", ex8.toString(), controller));
         tm.addCommand(new RunExample("9", ex9.toString(), controller));
+        tm.addCommand(new RunExample("10", ex10.toString(), controller));
         tm.show();
     }
 }
