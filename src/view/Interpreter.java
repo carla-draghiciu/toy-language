@@ -174,6 +174,22 @@ public class Interpreter {
                 )
         );
 
+        var cond = new RelationalExpression(new VariableExpression("v"), new ValueExpression(new IntValue(0)), ">");
+        var then = new CompoundStatement(
+                new PrintStatement(new VariableExpression("v")),
+                new AssignmentStatement("v", new ArithmeticExpression(new VariableExpression("v"), new ValueExpression(new IntValue(1)), '-'))
+        );
+        Statement ex12 = new CompoundStatement(
+                new VariableDeclarationStatement(new IntType(), "v"),
+                new CompoundStatement(
+                        new AssignmentStatement("v", new ValueExpression(new IntValue(4))),
+                        new CompoundStatement(
+                                new WhileStatement(cond, then),
+                                new PrintStatement(new VariableExpression("v"))
+                        )
+                )
+        );
+
         controller.addNewProgram(ex1);
         controller.addNewProgram(ex2);
         controller.addNewProgram(ex3);
@@ -185,6 +201,7 @@ public class Interpreter {
         controller.addNewProgram(ex9);
         controller.addNewProgram(ex10);
         controller.addNewProgram(ex11);
+        controller.addNewProgram(ex12);
 
         TextMenu tm = new TextMenu();
         tm.addCommand(new ExitCommand("0", "exit"));
@@ -199,6 +216,7 @@ public class Interpreter {
         tm.addCommand(new RunExample("9", ex9.toString(), controller));
         tm.addCommand(new RunExample("10", ex10.toString(), controller));
         tm.addCommand(new RunExample("11", ex11.toString(), controller));
+        tm.addCommand(new RunExample("12", ex12.toString(), controller));
         tm.show();
     }
 }
