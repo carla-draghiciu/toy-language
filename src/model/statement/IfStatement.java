@@ -3,6 +3,7 @@ package model.statement;
 import model.exception.MismatchException;
 import model.expression.Expression;
 import model.state.ProgramState;
+import model.type.BoolType;
 import model.type.Type;
 import model.value.BoolValue;
 import model.value.Value;
@@ -11,7 +12,7 @@ public record IfStatement(Expression condition, Statement thenStatement, Stateme
     @Override
     public ProgramState execute(ProgramState state) {
         Value val = condition.evaluate(state.symTable());
-        if (val.getType() != Type.BOOLEAN) {
+        if (!(val.getType() instanceof BoolType)) {
             throw new MismatchException("If condition is not boolean");
         }
 

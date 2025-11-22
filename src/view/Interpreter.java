@@ -1,12 +1,13 @@
 package view;
-
 import controller.Controller;
 import model.expression.ArithmeticExpression;
 import model.expression.RelationalExpression;
 import model.expression.ValueExpression;
 import model.expression.VariableExpression;
 import model.statement.*;
-import model.type.Type;
+import model.type.BoolType;
+import model.type.IntType;
+import model.type.StringType;
 import model.value.BoolValue;
 import model.value.IntValue;
 import model.value.StringValue;
@@ -14,7 +15,6 @@ import repository.ArrayListRepository;
 import repository.Repository;
 import view.commands.ExitCommand;
 import view.commands.RunExample;
-
 import java.util.Scanner;
 
 public class Interpreter {
@@ -25,7 +25,7 @@ public class Interpreter {
         Repository repo = new ArrayListRepository(logPath);
         Controller controller = new Controller(repo);
         Statement ex1 = new CompoundStatement(
-                new VariableDeclarationStatement(Type.INTEGER, "v"),
+                new VariableDeclarationStatement(new IntType(), "v"),
                 new CompoundStatement(
                         new AssignmentStatement("v", new ValueExpression(new IntValue(2))),
                         new PrintStatement(new VariableExpression("v"))
@@ -33,9 +33,9 @@ public class Interpreter {
         );
 
         Statement ex2 = new CompoundStatement(
-                new VariableDeclarationStatement(Type.INTEGER, "a"),
+                new VariableDeclarationStatement(new IntType(), "a"),
                 new CompoundStatement(
-                        new VariableDeclarationStatement(Type.INTEGER, "b"),
+                        new VariableDeclarationStatement(new IntType(), "b"),
                         new CompoundStatement(
                                 new AssignmentStatement("a", new ArithmeticExpression(new ValueExpression(new IntValue(2)), new ArithmeticExpression(new ValueExpression(new IntValue(3)), new ValueExpression(new IntValue(5)), '*'), '+')),
                                 new CompoundStatement(
@@ -47,9 +47,9 @@ public class Interpreter {
         );
 
         Statement ex3 = new CompoundStatement(
-                new VariableDeclarationStatement(Type.BOOLEAN, "a"),
+                new VariableDeclarationStatement(new BoolType(), "a"),
                 new CompoundStatement(
-                        new VariableDeclarationStatement(Type.INTEGER, "v"),
+                        new VariableDeclarationStatement(new IntType(), "v"),
                         new CompoundStatement(
                                 new AssignmentStatement("a", new ValueExpression(new BoolValue(true))),
                                 new CompoundStatement(
@@ -61,10 +61,10 @@ public class Interpreter {
         );
 
         Statement ex4 = new CompoundStatement(
-                new VariableDeclarationStatement(Type.INTEGER, "a"),
+                new VariableDeclarationStatement(new IntType(), "a"),
                 new CompoundStatement(
                         new AssignmentStatement("a", new ValueExpression(new IntValue(5))),
-                        new VariableDeclarationStatement(Type.INTEGER, "a")
+                        new VariableDeclarationStatement(new IntType(), "a")
                 )
         );
 
@@ -74,7 +74,7 @@ public class Interpreter {
         );
 
         Statement ex6 = new CompoundStatement(
-                new VariableDeclarationStatement(Type.INTEGER, "a"),
+                new VariableDeclarationStatement(new IntType(), "a"),
                 new CompoundStatement(
                         new AssignmentStatement("a", new ArithmeticExpression(new ValueExpression(new IntValue(5)), new ValueExpression(new IntValue(0)), '/')),
                         new PrintStatement(new VariableExpression("a"))
@@ -82,9 +82,9 @@ public class Interpreter {
         );
 
         Statement ex7 = new CompoundStatement(
-                new VariableDeclarationStatement(Type.INTEGER, "a"),
+                new VariableDeclarationStatement(new IntType(), "a"),
                 new CompoundStatement(
-                        new VariableDeclarationStatement(Type.INTEGER, "v"),
+                        new VariableDeclarationStatement(new IntType(), "v"),
                         new CompoundStatement(
                                 new IfStatement(new VariableExpression("a"), new AssignmentStatement("v", new ValueExpression(new IntValue(2))), new AssignmentStatement("v", new ValueExpression(new IntValue(3)))),
                                 new PrintStatement(new VariableExpression("v"))
@@ -100,13 +100,13 @@ public class Interpreter {
         //readFile(varf,varc);print(varc)
         //closeRFile(varf)
         Statement ex8 = new CompoundStatement(
-                new VariableDeclarationStatement(Type.STRING, "varf"),
+                new VariableDeclarationStatement(new StringType(), "varf"),
                 new CompoundStatement(
                         new AssignmentStatement("varf", new ValueExpression(new StringValue("test.in"))),
                         new CompoundStatement(
                                 new OpenRFileStatement(new VariableExpression("varf")),
                                 new CompoundStatement(
-                                        new VariableDeclarationStatement(Type.INTEGER, "varc"),
+                                        new VariableDeclarationStatement(new IntType(), "varc"),
                                         new CompoundStatement(
                                                 new ReadFileStatement(new VariableExpression("varf"), "varc"),
                                                 new CompoundStatement(
@@ -126,15 +126,15 @@ public class Interpreter {
         );
 
         Statement ex9 = new CompoundStatement(
-                new VariableDeclarationStatement(Type.INTEGER, "a"),
+                new VariableDeclarationStatement(new IntType(), "a"),
                 new CompoundStatement(
-                        new VariableDeclarationStatement(Type.INTEGER, "b"),
+                        new VariableDeclarationStatement(new IntType(), "b"),
                         new CompoundStatement(
                                 new AssignmentStatement("a", new ValueExpression(new IntValue(10))),
                                 new CompoundStatement(
                                         new AssignmentStatement("b", new ValueExpression(new IntValue(7))),
                                         new CompoundStatement(
-                                                new VariableDeclarationStatement(Type.STRING, "result"),
+                                                new VariableDeclarationStatement(new StringType(), "result"),
                                                 new CompoundStatement(
                                                         new IfStatement(new RelationalExpression(new VariableExpression("a"), new VariableExpression("b"), "<="), new AssignmentStatement("result", new ValueExpression(new StringValue("a is less or equal than b"))), new AssignmentStatement("result", new ValueExpression(new StringValue("a is greater or equal than b")))),
                                                         new PrintStatement(new VariableExpression("result"))

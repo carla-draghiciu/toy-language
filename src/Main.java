@@ -7,7 +7,6 @@ import model.type.*;
 import repository.ArrayListRepository;
 import repository.Repository;
 import view.Interpreter;
-import view.View;
 // C:\Users\dragh\OneDrive\Documents\Facultate\Semester 3\MAP\toylanguage\src\logs\log.txt
 
 void main() {

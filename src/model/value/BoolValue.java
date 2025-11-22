@@ -1,12 +1,13 @@
 package model.value;
 
 import model.exception.MismatchException;
+import model.type.BoolType;
 import model.type.Type;
 
 public record BoolValue(boolean value) implements Value {
-    public Type getType()
-    {
-        return Type.BOOLEAN;
+    @Override
+    public Type getType() {
+        return new BoolType();
     }
 
     @Override

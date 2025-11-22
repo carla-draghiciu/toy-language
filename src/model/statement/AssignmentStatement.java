@@ -15,10 +15,10 @@ public record AssignmentStatement(String name, Expression expression) implements
         }
         Value exp = expression.evaluate(state.symTable());
 
-        Type rightType = exp.getType();
-        Type leftType = state.symTable().getVariableType(name);
+        var rightType = exp.getType();
+        var leftType = state.symTable().getVariableType(name);
 
-        if (!rightType.equals(leftType)) {
+        if (rightType.getClass() != leftType.getClass()) {
             throw new MismatchException("Different types");
         }
 

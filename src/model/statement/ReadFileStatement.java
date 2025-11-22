@@ -5,6 +5,7 @@ import model.exception.TextFileException;
 import model.exception.UndeclaredException;
 import model.expression.Expression;
 import model.state.ProgramState;
+import model.type.IntType;
 import model.type.Type;
 import model.value.IntValue;
 import model.value.StringValue;
@@ -19,7 +20,7 @@ public record ReadFileStatement(Expression exp, String var_name) implements Stat
             throw new UndeclaredException("Variable " + var_name + " is not defined");
         }
 
-        if (state.symTable().getVariableType(var_name) != Type.INTEGER) {
+        if (!(state.symTable().getVariableType(var_name) instanceof IntType)) {
             throw new MismatchException("Value " + var_name + " is not an integer");
         }
 
