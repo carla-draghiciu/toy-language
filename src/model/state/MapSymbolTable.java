@@ -38,6 +38,11 @@ public class MapSymbolTable implements SymbolTable {
     }
 
     @Override
+    public MyDictionary<String, Value> getDict() {
+        return symbolTable;
+    }
+
+    @Override
     public String toString() {
         return symbolTable.toString();
     }

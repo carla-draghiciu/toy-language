@@ -29,6 +29,11 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
     }
 
     @Override
+    public Iterable<Map.Entry<K,T>> entrySet() {
+        return symbolTable.entrySet();
+    }
+
+    @Override
     public String toString() {
         return symbolTable.toString();
     }

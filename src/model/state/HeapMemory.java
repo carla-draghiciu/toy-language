@@ -3,6 +3,9 @@ package model.state;
 import model.adt.MyHeap;
 import model.value.Value;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class HeapMemory implements Memory {
     private final MyHeap<Integer, Value> memory = new MyHeap<Integer, Value>();
     private int newFreeLocation;
@@ -38,6 +41,25 @@ public class HeapMemory implements Memory {
     @Override
     public Value getValue(int location) {
         return  memory.get(location);
+    }
+
+    @Override
+    public void garbage(Set<Integer> addresses) {
+        Set<Integer> toBeRemoved = new HashSet<Integer>();
+        for (var elem : memory.entrySet()) {
+            if (!addresses.contains(elem.getKey())) {
+                toBeRemoved.add(elem.getKey());
+            }
+        }
+
+        for (var key : toBeRemoved) {
+            memory.remove(key);
+        }
+    }
+
+    @Override
+    public MyHeap<Integer, Value> getHeap() {
+        return memory;
     }
 
     @Override

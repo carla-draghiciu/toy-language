@@ -22,6 +22,16 @@ public class MyHeap<K, T> implements MyIHeap<K, T> {
     }
 
     @Override
+    public void remove(K key) {
+        elements.remove(key);
+    }
+
+    @Override
+    public Iterable<Map.Entry<K,T>> entrySet() {
+        return elements.entrySet();
+    }
+
+    @Override
     public String toString() {
         return elements.toString();
     }

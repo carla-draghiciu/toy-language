@@ -28,12 +28,14 @@ public record Controller(Repository repository) {
 
         while(!state.execStack().isEmpty()) {
             state = executeStep(state);
+            GarbageCollector gc =  new GarbageCollector();
+            gc.collect(state);
             displayCurrentState(index);
             repository.logPrgStateExec(index);
         }
     }
 
     public void displayCurrentState(int index) {
-        IO.println("Current state: " + repository.getCurrentState(index));
+        IO.println(repository.getCurrentState(index));
     }
 }
