@@ -1,0 +1,126 @@
+
+ExeStack:  { int a | (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { int b | (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:  {a=0, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { a=2 + 3 * 5 | (b=a + 1 ; print(b)) }
+SymTable:  {a=0, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (b=a + 1 ; print(b)) }
+SymTable:  {a=17, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { b=a + 1 | print(b) }
+SymTable:  {a=17, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { print(b) }
+SymTable:  {a=17, b=18}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  {  }
+SymTable:  {a=17, b=18}
+Out:       [18]
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { int a | (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (int b ; (a=2 + 3 * 5 ; (b=a + 1 ; print(b)))) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { int b | (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (a=2 + 3 * 5 ; (b=a + 1 ; print(b))) }
+SymTable:  {a=0, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { a=2 + 3 * 5 | (b=a + 1 ; print(b)) }
+SymTable:  {a=0, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (b=a + 1 ; print(b)) }
+SymTable:  {a=17, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { b=a + 1 | print(b) }
+SymTable:  {a=17, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { print(b) }
+SymTable:  {a=17, b=18}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  {  }
+SymTable:  {a=17, b=18}
+Out:       [18]
+FileTable: {}
+HeapTable: {}
+

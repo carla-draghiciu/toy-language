@@ -7,7 +7,7 @@ import model.type.*;
 import repository.ArrayListRepository;
 import repository.Repository;
 import view.Interpreter;
-// C:\Users\dragh\OneDrive\Documents\Facultate\Semester 3\MAP\toylanguage\src\logs\log.txt
+// C:\Users\dragh\OneDrive\Documents\Facultate\Semester 3\MAP\toylanguage\src\logs\log1.txt
 
 void main() {
 //    System.out.println(new java.io.File(".").getAbsolutePath());

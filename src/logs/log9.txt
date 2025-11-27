@@ -1,0 +1,98 @@
+
+ExeStack:  { int a | (int b ; (a=10 ; (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (int b ; (a=10 ; (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)))))) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { int b | (a=10 ; (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result))))) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (a=10 ; (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result))))) }
+SymTable:  {a=0, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { a=10 | (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)))) }
+SymTable:  {a=0, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (b=7 ; (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)))) }
+SymTable:  {a=10, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { b=7 | (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result))) }
+SymTable:  {a=10, b=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (string result ; ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result))) }
+SymTable:  {a=10, b=7}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { string result | ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)) }
+SymTable:  {a=10, b=7}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { ((if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) ; print(result)) }
+SymTable:  {result=, a=10, b=7}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (if( a <= b) then(result=a is less or equal than b) else(result=a is greater or equal than b)) | print(result) }
+SymTable:  {result=, a=10, b=7}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { result=a is greater or equal than b | print(result) }
+SymTable:  {result=, a=10, b=7}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { print(result) }
+SymTable:  {result=a is greater or equal than b, a=10, b=7}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  {  }
+SymTable:  {result=a is greater or equal than b, a=10, b=7}
+Out:       [a is greater or equal than b]
+FileTable: {}
+HeapTable: {}
+

@@ -1,0 +1,154 @@
+
+ExeStack:  { Ref(int) v | (Ref(Ref(int)) a ; (new(v, 20) ; (new(a, v) ; (new(v, 50) ; new(a, v))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (Ref(Ref(int)) a ; (new(v, 20) ; (new(a, v) ; (new(v, 50) ; new(a, v))))) }
+SymTable:  {v=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { Ref(Ref(int)) a | (new(v, 20) ; (new(a, v) ; (new(v, 50) ; new(a, v)))) }
+SymTable:  {v=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (new(v, 20) ; (new(a, v) ; (new(v, 50) ; new(a, v)))) }
+SymTable:  {a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { new(v, 20) | (new(a, v) ; (new(v, 50) ; new(a, v))) }
+SymTable:  {a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (new(a, v) ; (new(v, 50) ; new(a, v))) }
+SymTable:  {a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+ExeStack:  { new(a, v) | (new(v, 50) ; new(a, v)) }
+SymTable:  {a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+ExeStack:  { (new(v, 50) ; new(a, v)) }
+SymTable:  {a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20, 2=RefValue[address=1, locationType=int]}
+
+
+ExeStack:  { new(v, 50) | new(a, v) }
+SymTable:  {a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20, 2=RefValue[address=1, locationType=int]}
+
+
+ExeStack:  { new(a, v) }
+SymTable:  {a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=3, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20, 2=RefValue[address=1, locationType=int], 3=50}
+
+
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=4, locationType=Ref(int)], v=RefValue[address=3, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {3=50, 4=RefValue[address=3, locationType=int]}
+
+
+ExeStack:  { Ref(int) v | (Ref(Ref(int)) a ; (new(v, 20) ; (new(a, v) ; (new(v, 50) ; new(a, v))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (Ref(Ref(int)) a ; (new(v, 20) ; (new(a, v) ; (new(v, 50) ; new(a, v))))) }
+SymTable:  {v=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { Ref(Ref(int)) a | (new(v, 20) ; (new(a, v) ; (new(v, 50) ; new(a, v)))) }
+SymTable:  {v=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (new(v, 20) ; (new(a, v) ; (new(v, 50) ; new(a, v)))) }
+SymTable:  {a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { new(v, 20) | (new(a, v) ; (new(v, 50) ; new(a, v))) }
+SymTable:  {a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (new(a, v) ; (new(v, 50) ; new(a, v))) }
+SymTable:  {a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+ExeStack:  { new(a, v) | (new(v, 50) ; new(a, v)) }
+SymTable:  {a=RefValue[address=0, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+ExeStack:  { (new(v, 50) ; new(a, v)) }
+SymTable:  {a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20, 2=RefValue[address=1, locationType=int]}
+
+
+ExeStack:  { new(v, 50) | new(a, v) }
+SymTable:  {a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20, 2=RefValue[address=1, locationType=int]}
+
+
+ExeStack:  { new(a, v) }
+SymTable:  {a=RefValue[address=2, locationType=Ref(int)], v=RefValue[address=3, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20, 2=RefValue[address=1, locationType=int], 3=50}
+
+
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=4, locationType=Ref(int)], v=RefValue[address=3, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {3=50, 4=RefValue[address=3, locationType=int]}
+

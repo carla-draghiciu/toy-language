@@ -1,0 +1,7 @@
+
+ExeStack:  { a=true | print(a) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+

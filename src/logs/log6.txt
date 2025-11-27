@@ -1,0 +1,21 @@
+
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
