@@ -22,22 +22,31 @@ public class ArrayListRepository implements Repository {
         programStates.add(state);
     }
 
-    @Override
-    public ProgramState getCurrentState(int index) {
-//        return programStates.getFirst();
-        return programStates.get(index);
-    }
+//    @Override
+//    public ProgramState getCurrentState(int index) {
+//        return programStates.get(index);
+//    }
 
     @Override
-    public void logPrgStateExec(int index) throws TextFileException {
+    public void logPrgStateExec(ProgramState programState) throws TextFileException {
         try (PrintWriter logFile = new PrintWriter(
                 new BufferedWriter(new FileWriter(logFilePath, true)))) {
 
-            logFile.println(getCurrentState(index).toString());
+            logFile.println(programState.toString());
 
         } catch (Exception e) {
             throw new TextFileException("Could not write to log file: " + e.getMessage());
         }
     }
 
+    @Override
+    public List<ProgramState> getProgramList() {
+        return programStates;
+    }
+
+    @Override
+    public void setProgramList(List<ProgramState> programList) {
+        this.programStates.clear();
+        this.programStates.addAll(programList);
+    }
 }

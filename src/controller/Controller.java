@@ -5,6 +5,9 @@ import model.state.*;
 import model.statement.Statement;
 import repository.Repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public record Controller(Repository repository) {
     public void addNewProgram(Statement statement) {
         ExecutionStack execStack = new LinkedListExecutionStack();
@@ -14,24 +17,21 @@ public record Controller(Repository repository) {
         repository.addProgramState(newState);
     }
 
-    public ProgramState executeStep(ProgramState state) {
-        if (state.execStack().isEmpty()) {
-            throw new EmptyStackException("STack is empty");
-        }
-
-        Statement nextStep =  state.execStack().pop();
-        return nextStep.execute(state);
+    public List<ProgramState> removeCompletedPrograms(List<ProgramState> programStates) {
+        return programStates.stream()
+                .filter(p -> p.isNotCompleted())
+                .collect(Collectors.toList());
     }
 
     public void executeAll(int index) {
         ProgramState state = repository.getCurrentState(index);
 
         while(!state.execStack().isEmpty()) {
-            state = executeStep(state);
+            state = state.oneStep();
             GarbageCollector gc =  new GarbageCollector();
             gc.collect(state);
             displayCurrentState(index);
-            repository.logPrgStateExec(index);
+            repository.logPrgStateExec(state);
         }
     }
 
