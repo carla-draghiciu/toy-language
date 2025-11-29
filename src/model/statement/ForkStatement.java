@@ -8,7 +8,7 @@ public record ForkStatement(Statement statement) implements Statement {
     @Override
     public ProgramState execute(ProgramState state) {
         ExecutionStack newES = new LinkedListExecutionStack();
-        SymbolTable newST = new MapSymbolTable();
+        SymbolTable newST = state.symTable().cloneTable();
         Out newO = new ArrayListOut();
         FileTable newFT = new MapFileTable();
         Memory newM = new HeapMemory();

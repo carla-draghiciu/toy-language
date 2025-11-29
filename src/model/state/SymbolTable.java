@@ -11,4 +11,5 @@ public interface SymbolTable {
     void setValue(String name, Value value);
     boolean isDefined(String name);
     MyDictionary<String, Value> getDict();
+    SymbolTable cloneTable();
 }

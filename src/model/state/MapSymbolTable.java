@@ -43,6 +43,13 @@ public class MapSymbolTable implements SymbolTable {
     }
 
     @Override
+    public SymbolTable cloneTable() {
+        var newsymbolTable = new MapSymbolTable();
+        newsymbolTable.getDict().putAll(symbolTable);
+        return newsymbolTable;
+    }
+
+    @Override
     public String toString() {
         return symbolTable.toString();
     }

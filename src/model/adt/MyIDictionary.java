@@ -8,4 +8,5 @@ public interface MyIDictionary<K, T> {
     boolean contains(K key);
     void remove(K key);
     Iterable<Map.Entry<K,T>> entrySet();
+    void putAll(MyDictionary<K,T> dictionary);
 }

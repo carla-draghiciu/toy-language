@@ -34,6 +34,11 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
     }
 
     @Override
+    public void putAll(MyDictionary<K,T> dictionary) {
+        symbolTable.putAll(dictionary.symbolTable);
+    }
+
+    @Override
     public String toString() {
         return symbolTable.toString();
     }
