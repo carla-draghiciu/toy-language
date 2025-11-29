@@ -40,3 +40,5 @@ public class GarbageCollector {
         heapTable.garbage(addresses);
     }
 }
+
+

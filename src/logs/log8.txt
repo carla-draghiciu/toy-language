@@ -117,3 +117,547 @@ Out:       [15, 20]
 FileTable: {}
 HeapTable: {}
 
+
+    Id:    8
+ExeStack:  { (string varf ; (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { string varf | (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { string varf | (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:  {varf=}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:  {varf=}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { varf=test.in | (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:  {varf=}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { varf=test.in | (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:  {varf=}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { openRFile(varf) | (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { openRFile(varf) | (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { int varc | (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { int varc | (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:  {varf=test.in, varc=0}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:  {varf=test.in, varc=0}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { readFile(varf, varc) | (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:  {varf=test.in, varc=0}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { readFile(varf, varc) | (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:  {varf=test.in, varc=0}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { print(varc) | (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { print(varc) | (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { readFile(varf, varc) | (print(varc) ; closeRFile(varf)) }
+SymTable:  {varf=test.in, varc=15}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { readFile(varf, varc) | (print(varc) ; closeRFile(varf)) }
+SymTable:  {varf=test.in, varc=15}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (print(varc) ; closeRFile(varf)) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (print(varc) ; closeRFile(varf)) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { print(varc) | closeRFile(varf) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { print(varc) | closeRFile(varf) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { closeRFile(varf) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15, 20]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { closeRFile(varf) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15, 20]
+FileTable: {test.in=java.io.BufferedReader@5a10411}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  {  }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15, 20]
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (string varf ; (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { string varf | (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { string varf | (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:  {varf=}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (varf=test.in ; (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))))) }
+SymTable:  {varf=}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { varf=test.in | (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:  {varf=}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { varf=test.in | (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:  {varf=}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (openRFile(varf) ; (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { openRFile(varf) | (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { openRFile(varf) | (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (int varc ; (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { int varc | (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { int varc | (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:  {varf=test.in}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:  {varf=test.in, varc=0}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (readFile(varf, varc) ; (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))))) }
+SymTable:  {varf=test.in, varc=0}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { readFile(varf, varc) | (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:  {varf=test.in, varc=0}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { readFile(varf, varc) | (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:  {varf=test.in, varc=0}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (print(varc) ; (readFile(varf, varc) ; (print(varc) ; closeRFile(varf)))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { print(varc) | (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { print(varc) | (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       []
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (readFile(varf, varc) ; (print(varc) ; closeRFile(varf))) }
+SymTable:  {varf=test.in, varc=15}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { readFile(varf, varc) | (print(varc) ; closeRFile(varf)) }
+SymTable:  {varf=test.in, varc=15}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { readFile(varf, varc) | (print(varc) ; closeRFile(varf)) }
+SymTable:  {varf=test.in, varc=15}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (print(varc) ; closeRFile(varf)) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { (print(varc) ; closeRFile(varf)) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { print(varc) | closeRFile(varf) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { print(varc) | closeRFile(varf) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { closeRFile(varf) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15, 20]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  { closeRFile(varf) }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15, 20]
+FileTable: {test.in=java.io.BufferedReader@533ddba}
+HeapTable: {}
+
+
+    Id:    8
+ExeStack:  {  }
+SymTable:  {varf=test.in, varc=20}
+Out:       [15, 20]
+FileTable: {}
+HeapTable: {}
+

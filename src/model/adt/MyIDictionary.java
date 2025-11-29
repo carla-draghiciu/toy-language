@@ -1,5 +1,6 @@
 package model.adt;
 
+import java.util.Collection;
 import java.util.Map;
 
 public interface MyIDictionary<K, T> {
@@ -9,4 +10,5 @@ public interface MyIDictionary<K, T> {
     void remove(K key);
     Iterable<Map.Entry<K,T>> entrySet();
     void putAll(MyDictionary<K,T> dictionary);
+    Collection<T> values();
 }

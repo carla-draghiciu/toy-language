@@ -240,6 +240,39 @@ public class Interpreter {
                 )
         );
 
+        Repository repo15 = new ArrayListRepository("src/logs/log15.txt");
+        Controller ctr15 = new Controller(repo15);
+        Statement ex15 = new CompoundStatement(
+                new VariableDeclarationStatement(new IntType(), "v"),
+                new CompoundStatement(
+                        new VariableDeclarationStatement(new RefType(new IntType()), "a"),
+                        new CompoundStatement(
+                                new AssignmentStatement("v", new ValueExpression(new IntValue(10))),
+                                new CompoundStatement(
+                                        new NewStatement("a", new ValueExpression(new IntValue(22))),
+                                        new CompoundStatement(
+                                                new ForkStatement(
+                                                        new CompoundStatement(
+                                                                new HeapWritingStatement("a", new ValueExpression(new IntValue(30))),
+                                                                new CompoundStatement(
+                                                                        new AssignmentStatement("v", new ValueExpression(new IntValue(32))),
+                                                                        new CompoundStatement(
+                                                                                new PrintStatement(new VariableExpression("v")),
+                                                                                new PrintStatement(new ReadHeapExpression(new VariableExpression("a")))
+                                                                        )
+                                                                )
+                                                        )
+                                                ),
+                                                new CompoundStatement(
+                                                        new PrintStatement(new VariableExpression("v")),
+                                                        new PrintStatement(new ReadHeapExpression(new VariableExpression("a")))
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
         ctr1.addNewProgram(ex1);
         ctr2.addNewProgram(ex2);
         ctr3.addNewProgram(ex3);
@@ -254,6 +287,7 @@ public class Interpreter {
         ctr12.addNewProgram(ex12);
         ctr13.addNewProgram(ex13);
         ctr14.addNewProgram(ex14);
+        ctr15.addNewProgram(ex15);
 
         TextMenu tm = new TextMenu();
         tm.addCommand(new ExitCommand("0", "exit"));
@@ -271,6 +305,7 @@ public class Interpreter {
         tm.addCommand(new RunExample("12", ex12.toString(), ctr12));
         tm.addCommand(new RunExample("13", ex13.toString(), ctr13));
         tm.addCommand(new RunExample("14", ex14.toString(), ctr14));
+        tm.addCommand(new RunExample("15", ex15.toString(), ctr15));
         tm.show();
     }
 }

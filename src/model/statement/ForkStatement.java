@@ -9,9 +9,9 @@ public record ForkStatement(Statement statement) implements Statement {
     public ProgramState execute(ProgramState state) {
         ExecutionStack newES = new LinkedListExecutionStack();
         SymbolTable newST = state.symTable().cloneTable();
-        Out newO = new ArrayListOut();
-        FileTable newFT = new MapFileTable();
-        Memory newM = new HeapMemory();
+        Out newO = state.out();
+        FileTable newFT = state.fileTable();
+        Memory newM = state.heapTable();
 
         newES.push(statement);
         var ps = new ProgramState(newES, newST, newO, newFT, newM);

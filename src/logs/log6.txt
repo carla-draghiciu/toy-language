@@ -19,3 +19,507 @@ Out:       []
 FileTable: {}
 HeapTable: {}
 
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (int a ; (a=5 / 0 ; print(a))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { int a | (a=5 / 0 ; print(a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { (a=5 / 0 ; print(a)) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    6
+ExeStack:  { a=5 / 0 | print(a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+

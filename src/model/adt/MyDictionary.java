@@ -2,6 +2,7 @@ package model.adt;
 
 import model.value.Value;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +37,11 @@ public class MyDictionary<K, T> implements MyIDictionary<K, T> {
     @Override
     public void putAll(MyDictionary<K,T> dictionary) {
         symbolTable.putAll(dictionary.symbolTable);
+    }
+
+    @Override
+    public Collection<T> values() {
+        return symbolTable.values();
     }
 
     @Override

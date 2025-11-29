@@ -1,4 +1,13 @@
 
+    Id:    1
+ExeStack:  { (int v ; (v=2 ; print(v))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
 ExeStack:  { int v | (v=2 ; print(v)) }
 SymTable:  {}
 Out:       []
@@ -6,6 +15,15 @@ FileTable: {}
 HeapTable: {}
 
 
+    Id:    1
+ExeStack:  { int v | (v=2 ; print(v)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
 ExeStack:  { (v=2 ; print(v)) }
 SymTable:  {v=0}
 Out:       []
@@ -13,6 +31,15 @@ FileTable: {}
 HeapTable: {}
 
 
+    Id:    1
+ExeStack:  { (v=2 ; print(v)) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
 ExeStack:  { v=2 | print(v) }
 SymTable:  {v=0}
 Out:       []
@@ -20,6 +47,15 @@ FileTable: {}
 HeapTable: {}
 
 
+    Id:    1
+ExeStack:  { v=2 | print(v) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
 ExeStack:  { print(v) }
 SymTable:  {v=2}
 Out:       []
@@ -27,6 +63,175 @@ FileTable: {}
 HeapTable: {}
 
 
+    Id:    1
+ExeStack:  { print(v) }
+SymTable:  {v=2}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  {  }
+SymTable:  {v=2}
+Out:       [2]
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { (int v ; (v=2 ; print(v))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { int v | (v=2 ; print(v)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { int v | (v=2 ; print(v)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { (v=2 ; print(v)) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { (v=2 ; print(v)) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { v=2 | print(v) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { v=2 | print(v) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { print(v) }
+SymTable:  {v=2}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { print(v) }
+SymTable:  {v=2}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  {  }
+SymTable:  {v=2}
+Out:       [2]
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { (int v ; (v=2 ; print(v))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { int v | (v=2 ; print(v)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { int v | (v=2 ; print(v)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { (v=2 ; print(v)) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { (v=2 ; print(v)) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { v=2 | print(v) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { v=2 | print(v) }
+SymTable:  {v=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { print(v) }
+SymTable:  {v=2}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
+ExeStack:  { print(v) }
+SymTable:  {v=2}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    1
 ExeStack:  {  }
 SymTable:  {v=2}
 Out:       [2]

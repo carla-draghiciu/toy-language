@@ -7,9 +7,7 @@ import repository.Repository;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public final class Controller {
@@ -38,16 +36,19 @@ public final class Controller {
         programStates.forEach(p -> repository.logPrgStateExec(p));
 
         List<Callable<ProgramState>> callList = programStates.stream()
-                .map((ProgramState p) -> (Callable<ProgramState>) (() -> {return p.oneStep();}))
-                .collect(Collectors.toList());
+                .map(state -> (Callable<ProgramState>) (state::oneStep))
+                .toList();
 
         try {
             List<ProgramState> newPrgList = executor.invokeAll(callList).stream()
                     .map(future -> {
                         try {
                             return future.get();
-                        } catch (Exception e) {
-                            throw new RuntimeException(e);
+                        } catch (ExecutionException ee) {
+                            throw (RuntimeException) ee.getCause();
+                        } catch (InterruptedException ie) {
+                            Thread.currentThread().interrupt();
+                            return null;
                         }
                     })
                     .filter(p -> p != null)
@@ -67,11 +68,15 @@ public final class Controller {
         List<ProgramState> prgList = removeCompletedPrograms(repository.getProgramList());
         while(prgList.size() > 0) {
             oneStepForAllPrg(prgList);
+            GarbageCollector gc = new GarbageCollector();
+            gc.collect(repository.getCurrentState());
+            displayCurrentState();
             prgList = removeCompletedPrograms(repository.getProgramList());
         }
 
         executor.shutdownNow();
         repository.setProgramList(prgList);
+
     }
 
     public void displayCurrentState() {
@@ -102,3 +107,5 @@ public final class Controller {
     }
 
 }
+
+
