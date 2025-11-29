@@ -6,9 +6,20 @@ import model.statement.Statement;
 import repository.Repository;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
-public record Controller(Repository repository) {
+public final class Controller {
+    private final ExecutorService executor;
+    private final Repository repository;
+
+    public Controller(Repository repository) {
+        this.repository = repository;
+        this.executor = Executors.newFixedThreadPool(2);    }
+
     public void addNewProgram(Statement statement) {
         ExecutionStack execStack = new LinkedListExecutionStack();
         execStack.push(statement);
@@ -23,19 +34,71 @@ public record Controller(Repository repository) {
                 .collect(Collectors.toList());
     }
 
-    public void executeAll(int index) {
-        ProgramState state = repository.getCurrentState(index);
+    public void oneStepForAllPrg(List<ProgramState> programStates) {
+        programStates.forEach(p -> repository.logPrgStateExec(p));
 
-        while(!state.execStack().isEmpty()) {
-            state = state.oneStep();
-            GarbageCollector gc =  new GarbageCollector();
-            gc.collect(state);
-            displayCurrentState(index);
-            repository.logPrgStateExec(state);
+        List<Callable<ProgramState>> callList = programStates.stream()
+                .map((ProgramState p) -> (Callable<ProgramState>) (() -> {return p.oneStep();}))
+                .collect(Collectors.toList());
+
+        try {
+            List<ProgramState> newPrgList = executor.invokeAll(callList).stream()
+                    .map(future -> {
+                        try {
+                            return future.get();
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                    })
+                    .filter(p -> p != null)
+                    .collect(Collectors.toList());
+
+            programStates.addAll(newPrgList);
+        } catch(InterruptedException e) {
+            throw new RuntimeException(e);
         }
+        programStates.forEach(p -> repository.logPrgStateExec(p));
+        repository.setProgramList(programStates);
     }
 
-    public void displayCurrentState(int index) {
-        IO.println(repository.getCurrentState(index));
+    public void executeAll() {
+//        executor = Executors.newFixedThreadPool(2);
+
+        List<ProgramState> prgList = removeCompletedPrograms(repository.getProgramList());
+        while(prgList.size() > 0) {
+            oneStepForAllPrg(prgList);
+            prgList = removeCompletedPrograms(repository.getProgramList());
+        }
+
+        executor.shutdownNow();
+        repository.setProgramList(prgList);
     }
+
+    public void displayCurrentState() {
+        IO.println(repository.getCurrentState());
+    }
+
+    public Repository repository() {
+        return repository;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        var that = (Controller) obj;
+        return Objects.equals(this.repository, that.repository);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(repository);
+    }
+
+    @Override
+    public String toString() {
+        return "Controller[" +
+                "repository=" + repository + ']';
+    }
+
 }

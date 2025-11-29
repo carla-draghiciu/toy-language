@@ -23,7 +23,7 @@ public record AssignmentStatement(String name, Expression expression) implements
         }
 
         state.symTable().setValue(name, exp);
-        return state;
+        return null;
     }
 
     @Override

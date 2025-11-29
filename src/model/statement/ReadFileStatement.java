@@ -51,7 +51,7 @@ public record ReadFileStatement(Expression exp, String var_name) implements Stat
         catch (Exception e) {
             throw new TextFileException(e.getMessage());
         }
-        return state;
+        return null;
     }
 
     @Override

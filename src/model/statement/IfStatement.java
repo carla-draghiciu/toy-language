@@ -19,7 +19,7 @@ public record IfStatement(Expression condition, Statement thenStatement, Stateme
         BoolValue booleanVal = (BoolValue) val;
         Statement chosenStatement = booleanVal.value() ? thenStatement : elseStatement;
         state.execStack().push(chosenStatement);
-        return state;
+        return null;
     }
 
     public String toString() {

@@ -30,7 +30,7 @@ public record OpenRFileStatement(Expression expression) implements Statement {
         } catch (Exception e) {
             throw new TextFileException(e.getMessage());
         }
-        return programState;
+        return null;
     }
 
     @Override

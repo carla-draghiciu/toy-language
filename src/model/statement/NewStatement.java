@@ -27,7 +27,7 @@ public record NewStatement(String var_name, Expression expression) implements St
         state.heapTable().addEntry(location, exp_value);
         state.heapTable().updateNextFreeLocation();
         state.symTable().setValue(var_name, new RefValue(location, var_value.getLocationType()));
-        return state;
+        return null;
     }
 
     @Override

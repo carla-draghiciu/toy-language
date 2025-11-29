@@ -16,12 +16,12 @@ public record WhileStatement(Expression condition, Statement statement) implemen
 
         BoolValue bool_val = (BoolValue) cond_val;
         if (!bool_val.value()) {
-            return state;
+            return null;
         }
 
         state.execStack().push(this);
         state.execStack().push(statement);
-        return state;
+        return null;
     }
 
     @Override

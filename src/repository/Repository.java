@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface Repository {
     void addProgramState(ProgramState state);
-//    ProgramState getCurrentState(int index);
+    ProgramState getCurrentState();
     void logPrgStateExec(ProgramState programState) throws TextFileException;
     List<ProgramState> getProgramList();
     void setProgramList(List<ProgramState> programList);

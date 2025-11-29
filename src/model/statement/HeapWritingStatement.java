@@ -32,6 +32,6 @@ public record HeapWritingStatement(String var_name, Expression expression) imple
         }
 
         heapTable.addEntry(refVal.address(), exp_val);
-        return state;
+        return null;
     }
 }

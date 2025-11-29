@@ -31,7 +31,7 @@ public record CloseRFileStatement(Expression expression) implements Statement {
         }
 
         state.fileTable().removeFile(str);
-        return state;
+        return null;
     }
 
     @Override

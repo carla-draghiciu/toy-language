@@ -22,10 +22,10 @@ public class ArrayListRepository implements Repository {
         programStates.add(state);
     }
 
-//    @Override
-//    public ProgramState getCurrentState(int index) {
-//        return programStates.get(index);
-//    }
+    @Override
+    public ProgramState getCurrentState() {
+        return programStates.getFirst();
+    }// must be removed??
 
     @Override
     public void logPrgStateExec(ProgramState programState) throws TextFileException {

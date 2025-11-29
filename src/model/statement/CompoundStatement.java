@@ -7,7 +7,7 @@ public record CompoundStatement(Statement left, Statement right) implements Stat
     public ProgramState execute(ProgramState state) {
         state.execStack().push(right);
         state.execStack().push(left);
-        return state;
+        return null;
     }
 
     @Override

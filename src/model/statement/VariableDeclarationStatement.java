@@ -11,7 +11,7 @@ public record VariableDeclarationStatement(Type varType, String varName) impleme
             throw new AlreadyDeclaredException("Variable " + varName + " is already defined");
         }
         state.symTable().declareVariable(varType, varName);
-        return state;
+        return null;
     } // TODO: is var already defined?
 
     @Override

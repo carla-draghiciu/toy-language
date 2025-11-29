@@ -12,9 +12,9 @@ public class RunExample extends Command {
     @Override
     public void execute() {
         try {
-            controller.displayCurrentState(0);
+            controller.displayCurrentState();
 //            controller.displayCurrentState(Integer.parseInt(this.getKey()) - 1);
-            controller.executeAll(0);
+            controller.executeAll();
 //            controller.executeAll(Integer.parseInt(this.getKey()) - 1);
         } catch (Exception e) {
             IO.println(e.getMessage());
