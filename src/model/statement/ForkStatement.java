@@ -16,5 +16,10 @@ public record ForkStatement(Statement statement) implements Statement {
         newES.push(statement);
         var ps = new ProgramState(newES, newST, newO, newFT, newM);
         return ps;
+    } // filetable, out and heap are references??
+
+    @Override
+    public String toString() {
+        return "fork(" + statement.toString() + ")";
     }
 }
