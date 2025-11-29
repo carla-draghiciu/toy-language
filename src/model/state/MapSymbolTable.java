@@ -51,6 +51,6 @@ public class MapSymbolTable implements SymbolTable {
 
     @Override
     public String toString() {
-        return symbolTable.toString();
+        return "SymTable:  " + symbolTable.toString() + "\n";
     }
 }

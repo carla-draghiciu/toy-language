@@ -34,6 +34,7 @@ public class LinkedListExecutionStack implements ExecutionStack {
 //        if (elements.size() > 0)
 //            result += elements.get(elements.size() - 1).toString();
 //        return result + " }";
-        return statements.toString();
+//        return statements.toString();
+        return "ExeStack:  " + statements.toString() + "\n";
     }
 }

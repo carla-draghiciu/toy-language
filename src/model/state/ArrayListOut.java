@@ -16,6 +16,6 @@ public class ArrayListOut implements Out {
 
     @Override
     public String toString() {
-        return values.toString();
+        return "Out:       " + values.toString() + "\n";
     }
 }

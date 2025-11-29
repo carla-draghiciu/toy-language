@@ -69,7 +69,7 @@ public final class Controller {
         while(prgList.size() > 0) {
             oneStepForAllPrg(prgList);
             GarbageCollector gc = new GarbageCollector();
-            gc.collect(repository.getCurrentState());
+            gc.collect(prgList);
             displayCurrentState();
             prgList = removeCompletedPrograms(repository.getProgramList());
         }
@@ -80,7 +80,8 @@ public final class Controller {
     }
 
     public void displayCurrentState() {
-        IO.println(repository.getCurrentState());
+//        IO.println(repository.getCurrentState());
+        IO.println(repository.displayState());
     }
 
     public Repository repository() {

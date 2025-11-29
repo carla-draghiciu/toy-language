@@ -23,15 +23,31 @@ public class ArrayListRepository implements Repository {
     }
 
     @Override
-    public ProgramState getCurrentState() {
-        return programStates.getFirst();
-    }// must be removed??
+    public String displayState() {
+        String res = "-----------------------------------------------------\n";
+        for (ProgramState programState : programStates) {
+            String id = "Id: " + programState.getId() + "\n";
+            String es = programState.execStack().toString();
+            String st = programState.symTable().toString();
+            res += id;
+            res += es;
+            res += st;
+            res += "\n";
+        }
+        String o = programStates.getFirst().out().toString();
+        String ft = programStates.getFirst().fileTable().toString();
+        String ht = programStates.getFirst().heapTable().toString();
+        res += o;
+        res += ft;
+        res += ht;
+        res += "\n";
+        return res;
+    }
 
     @Override
     public void logPrgStateExec(ProgramState programState) throws TextFileException {
         try (PrintWriter logFile = new PrintWriter(
                 new BufferedWriter(new FileWriter(logFilePath, true)))) {
-
             logFile.println(programState.toString());
 
         } catch (Exception e) {

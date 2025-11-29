@@ -64,6 +64,6 @@ public class HeapMemory implements Memory {
 
     @Override
     public String toString() {
-        return memory.toString();
+        return "HeapTable: " + memory.toString() + "\n";
     }
 }

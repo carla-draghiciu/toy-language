@@ -30,6 +30,6 @@ public class MapFileTable implements FileTable {
 
     @Override
     public String toString() {
-        return fileTable.toString();
+        return "FileTable: " + fileTable.toString() + "\n";
     }
 }

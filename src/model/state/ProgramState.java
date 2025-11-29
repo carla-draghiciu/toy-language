@@ -49,12 +49,18 @@ public class ProgramState {
 
     @Override
     public String toString() {
+//        return "\n    Id:    " + id + "\n" +
+//                "ExeStack:  " + execStack.toString() + "\n" +
+//                "SymTable:  " + symTable.toString() + "\n" +
+//                "Out:       " + out.toString() + "\n" +
+//                "FileTable: " + fileTable.toString() + "\n" +
+//                "HeapTable: " + heapTable.toString() + "\n";
         return "\n    Id:    " + id + "\n" +
-                "ExeStack:  " + execStack.toString() + "\n" +
-                "SymTable:  " + symTable.toString() + "\n" +
-                "Out:       " + out.toString() + "\n" +
-                "FileTable: " + fileTable.toString() + "\n" +
-                "HeapTable: " + heapTable.toString() + "\n";
+                execStack.toString() +
+                symTable.toString() +
+                out.toString() +
+                fileTable.toString() +
+                heapTable.toString();
     }
 
     public boolean isNotCompleted() {
