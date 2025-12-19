@@ -1,5 +1,6 @@
 package view;
 import controller.Controller;
+import model.exception.TypeCheckException;
 import model.expression.*;
 import model.statement.*;
 import model.type.BoolType;
@@ -9,6 +10,7 @@ import model.type.StringType;
 import model.value.BoolValue;
 import model.value.IntValue;
 import model.value.StringValue;
+import org.w3c.dom.Text;
 import repository.ArrayListRepository;
 import repository.Repository;
 import view.commands.ExitCommand;
@@ -16,6 +18,17 @@ import view.commands.RunExample;
 import java.util.Scanner;
 
 public class Interpreter {
+    private static int i = 0;
+
+    private static void add(Statement statement, Controller ctr) {
+        try {
+            i++;
+            ctr.addNewProgram(statement);
+        } catch (TypeCheckException e) {
+            IO.println("Statement " + i + ": " + e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
 //        Scanner keyboard = new Scanner(System.in);
 //        System.out.print("Enter log file path: ");
@@ -273,21 +286,21 @@ public class Interpreter {
                 )
         );
 
-        ctr1.addNewProgram(ex1);
-        ctr2.addNewProgram(ex2);
-        ctr3.addNewProgram(ex3);
-        ctr4.addNewProgram(ex4);
-        ctr5.addNewProgram(ex5);
-        ctr6.addNewProgram(ex6);
-        ctr7.addNewProgram(ex7);
-        ctr8.addNewProgram(ex8);
-        ctr9.addNewProgram(ex9);
-        ctr10.addNewProgram(ex10);
-        ctr11.addNewProgram(ex11);
-        ctr12.addNewProgram(ex12);
-        ctr13.addNewProgram(ex13);
-        ctr14.addNewProgram(ex14);
-        ctr15.addNewProgram(ex15);
+        add(ex1, ctr1);
+        add(ex2, ctr2);
+        add(ex3, ctr3);
+        add(ex4, ctr4);
+        add(ex5, ctr5);
+        add(ex6, ctr6);
+        add(ex7, ctr7);
+        add(ex8, ctr8);
+        add(ex9, ctr9);
+        add(ex10, ctr10);
+        add(ex11, ctr11);
+        add(ex12, ctr12);
+        add(ex13, ctr13);
+        add(ex14, ctr14);
+        add(ex15, ctr15);
 
         TextMenu tm = new TextMenu();
         tm.addCommand(new ExitCommand("0", "exit"));

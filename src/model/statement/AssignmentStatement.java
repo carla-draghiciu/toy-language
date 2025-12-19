@@ -1,5 +1,7 @@
 package model.statement;
 
+import model.adt.MyDictionary;
+import model.adt.MyIDictionary;
 import model.exception.MismatchException;
 import model.exception.UndeclaredException;
 import model.expression.Expression;
@@ -24,6 +26,20 @@ public record AssignmentStatement(String name, Expression expression) implements
 
         state.symTable().setValue(name, exp);
         return null;
+    }
+
+    @Override
+    public MyDictionary<String,Type> typecheck(MyDictionary<String,Type> typeEnv) {
+        if (typeEnv.contains(name)) {
+            Type typevar = typeEnv.getElement(name);
+            Type typexp = expression.typecheck(typeEnv);
+            if (typevar.equals(typexp)) {
+                return typeEnv;
+            } else
+                throw new MismatchException("Assignment: right hand side and left hand side have different types ");
+        }
+        else
+            throw new UndeclaredException("Undefined variable");
     }
 
     @Override

@@ -1,10 +1,12 @@
 package model.statement;
 
+import model.adt.MyDictionary;
 import model.exception.MismatchException;
 import model.exception.UndeclaredException;
 import model.expression.Expression;
 import model.state.ProgramState;
 import model.type.RefType;
+import model.type.Type;
 import model.value.RefValue;
 import model.value.Value;
 
@@ -28,6 +30,16 @@ public record NewStatement(String var_name, Expression expression) implements St
         state.heapTable().updateNextFreeLocation();
         state.symTable().setValue(var_name, new RefValue(location, var_value.getLocationType()));
         return null;
+    }
+
+    @Override
+    public MyDictionary<String, Type> typecheck(MyDictionary<String,Type> typeEnv) {
+        Type typevar = typeEnv.getElement(var_name);
+        Type typexp = expression.typecheck(typeEnv);
+        if (typevar.equals(new RefType(typexp)))
+            return typeEnv;
+        else
+            throw new MismatchException("NEW stmt: right hand side and left hand side havedifferent types ");
     }
 
     @Override

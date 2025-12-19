@@ -1,6 +1,9 @@
 package controller;
 
+import model.adt.MyDictionary;
 import model.exception.EmptyStackException;
+import model.exception.MismatchException;
+import model.exception.TypeCheckException;
 import model.state.*;
 import model.statement.Statement;
 import repository.Repository;
@@ -19,6 +22,12 @@ public final class Controller {
         this.executor = Executors.newFixedThreadPool(2);    }
 
     public void addNewProgram(Statement statement) {
+        try {
+            statement.typecheck(new MyDictionary<>());
+        } catch (Exception e) {
+            throw new TypeCheckException("Program failed. not added");
+        }
+
         ExecutionStack execStack = new LinkedListExecutionStack();
         execStack.push(statement);
 
@@ -64,6 +73,7 @@ public final class Controller {
 
     public void executeAll() {
 //        executor = Executors.newFixedThreadPool(2);
+
 
         List<ProgramState> prgList = removeCompletedPrograms(repository.getProgramList());
         while(prgList.size() > 0) {

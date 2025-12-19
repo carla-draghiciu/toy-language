@@ -1,5 +1,7 @@
 package model.adt;
 
+import model.state.MapSymbolTable;
+import model.state.SymbolTable;
 import model.value.Value;
 
 import java.util.Collection;

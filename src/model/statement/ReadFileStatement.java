@@ -1,11 +1,13 @@
 package model.statement;
 
+import model.adt.MyDictionary;
 import model.exception.MismatchException;
 import model.exception.TextFileException;
 import model.exception.UndeclaredException;
 import model.expression.Expression;
 import model.state.ProgramState;
 import model.type.IntType;
+import model.type.StringType;
 import model.type.Type;
 import model.value.IntValue;
 import model.value.StringValue;
@@ -53,6 +55,22 @@ public record ReadFileStatement(Expression exp, String var_name) implements Stat
         }
         return null;
     }
+
+    @Override
+    public MyDictionary<String, Type> typecheck(MyDictionary<String, Type> typeEnv) {
+        Type typeExp = exp.typecheck(typeEnv);
+
+        if (!typeExp.equals(new StringType())) {
+            throw new MismatchException("readFile expression is not a string");
+        }
+
+        Type varType = typeEnv.getElement(var_name);
+        if (!varType.equals(new IntType())) {
+            throw new MismatchException("readFile variable is not of type int");
+        }
+        return typeEnv;
+    }
+
 
     @Override
     public String toString() {

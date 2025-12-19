@@ -1,9 +1,13 @@
 package model.expression;
 
+import model.adt.MyDictionary;
+import model.adt.MyIDictionary;
 import model.exception.MismatchException;
 import model.exception.UndeclaredException;
 import model.state.Memory;
 import model.state.SymbolTable;
+import model.type.RefType;
+import model.type.Type;
 import model.value.RefValue;
 import model.value.Value;
 
@@ -21,6 +25,16 @@ public record ReadHeapExpression(Expression expression) implements Expression {
         }
 
         return heapTable.getValue(address);
+    }
+
+    @Override
+    public Type typecheck(MyDictionary<String,Type> typeEnv) {
+        Type typ=expression.typecheck(typeEnv);
+        if (typ instanceof RefType) {
+            RefType reft =(RefType) typ;
+            return reft.getInner();
+        } else
+            throw new MismatchException("the rH argument is not a Ref Type");
     }
 
     @Override

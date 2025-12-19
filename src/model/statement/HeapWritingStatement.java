@@ -1,10 +1,12 @@
 package model.statement;
 
+import model.adt.MyDictionary;
 import model.exception.MismatchException;
 import model.exception.UndeclaredException;
 import model.expression.Expression;
 import model.state.ProgramState;
 import model.type.RefType;
+import model.type.Type;
 import model.value.RefValue;
 import model.value.Value;
 
@@ -34,4 +36,25 @@ public record HeapWritingStatement(String var_name, Expression expression) imple
         heapTable.addEntry(refVal.address(), exp_val);
         return null;
     }
+
+    @Override
+    public MyDictionary<String, Type> typecheck(MyDictionary<String, Type> typeEnv) {
+        // 1. var_name must exist
+        Type varType = typeEnv.getElement(var_name);
+
+        // 2. var_name must be RefType
+        if (!(varType instanceof RefType refType)) {
+            throw new MismatchException("wH: variable " + var_name + " is not of RefType");
+        }
+
+        // 3. expression type must match the inner type of the reference
+        Type expType = expression.typecheck(typeEnv);
+        if (!expType.equals(refType.getInner())) {
+            throw new MismatchException("wH: expression type does not match reference inner type");
+        }
+
+        // 4. type environment is unchanged
+        return typeEnv;
+    }
+
 }

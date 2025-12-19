@@ -1,6 +1,7 @@
 package view.commands;
 
 import controller.Controller;
+import model.adt.MyDictionary;
 
 public class RunExample extends Command {
     private Controller controller;
@@ -12,6 +13,7 @@ public class RunExample extends Command {
     @Override
     public void execute() {
         try {
+
             controller.displayCurrentState();
 //            controller.displayCurrentState(Integer.parseInt(this.getKey()) - 1);
             controller.executeAll();

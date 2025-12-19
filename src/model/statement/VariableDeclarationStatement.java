@@ -1,5 +1,7 @@
 package model.statement;
 
+import model.adt.MyDictionary;
+import model.adt.MyIDictionary;
 import model.exception.AlreadyDeclaredException;
 import model.state.ProgramState;
 import model.type.Type;
@@ -13,6 +15,12 @@ public record VariableDeclarationStatement(Type varType, String varName) impleme
         state.symTable().declareVariable(varType, varName);
         return null;
     } // TODO: is var already defined?
+
+    @Override
+    public MyDictionary<String,Type> typecheck(MyDictionary<String,Type> typeEnv) {
+        typeEnv.add(varName,varType);
+        return typeEnv;
+    }
 
     @Override
     public String toString() {
