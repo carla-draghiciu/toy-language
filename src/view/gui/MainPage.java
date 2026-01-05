@@ -128,10 +128,13 @@ public class MainPage extends Application{
         symbolTableView.setItems(getSymbolTableEntries(s));
     }
 
-    private void refreshExeStackListView() {
+    private void refreshExeStackListView(int id) {
+        if (id == 0) {
+            return;
+        }
         exeStackListView.getItems().clear();
-        for (Statement o: executionStack.getStack()) {
-
+        ExecutionStack es = controller.getProgramState(id).execStack();
+        for (Statement o: es.getStack()) {
             exeStackListView.getItems().add(o.toString());
         }
     }
@@ -183,6 +186,7 @@ public class MainPage extends Application{
             if (newValue != null) {
                 lastSelectedID = newValue;
                 refreshSymbolTableView(lastSelectedID);
+                refreshExeStackListView(lastSelectedID);
             }
         });
 
@@ -199,7 +203,7 @@ public class MainPage extends Application{
 
         Label exeStackLabel = new Label("Execution Stack");
         exeStackListView = new ListView<>();
-        refreshExeStackListView();
+        refreshExeStackListView(lastSelectedID);
         HBox exeStackLayout = new HBox(20);
         exeStackLayout.getChildren().addAll(exeStackLabel,exeStackListView);
 
@@ -213,7 +217,7 @@ public class MainPage extends Application{
             refreshFileTableListView();
             refreshIdsListView();
             refreshSymbolTableView(lastSelectedID);
-            refreshExeStackListView();
+            refreshExeStackListView(lastSelectedID);
         });
 
         VBox layout2 = new VBox(10);
