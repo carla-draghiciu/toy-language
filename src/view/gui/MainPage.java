@@ -38,14 +38,17 @@ public class MainPage extends Application{
     Memory heapMemory;
     Out out;
     FileTable fileTable;
+    SymbolTable symbolTable;
+    private int lastSelectedID = 0;
+    ExecutionStack executionStack;
 
     TextField noPrgStates;
     TableView<HeapEntry> heapTableView;
     ListView<String> outListView;
     ListView<String> fileTableListView;
     ListView<Integer> idsListView;
-//    TableView<HeapEntry> symbolTableView;
-//    ListView<String> exeStackListView;
+    TableView<SymbolTableEntry> symbolTableView;
+    ListView<String> exeStackListView;
     Button runButton;
 
     private void populateScene1() {
@@ -106,6 +109,33 @@ public class MainPage extends Application{
         }
     }
 
+    private ObservableList<SymbolTableEntry> getSymbolTableEntries(SymbolTable symbolTable) {
+        ObservableList<SymbolTableEntry> stEntries = FXCollections.observableArrayList();
+        for (var h : symbolTable.getDict().entrySet()) {
+            String var = h.getKey().toString();
+            Value value = h.getValue();
+
+            stEntries.add(new SymbolTableEntry(var, value.toString()));
+        }
+        return stEntries;
+    }
+
+    private void refreshSymbolTableView(int id) {
+        if (id == 0) {
+            return;
+        }
+        SymbolTable s = controller.getProgramState(id).symTable();
+        symbolTableView.setItems(getSymbolTableEntries(s));
+    }
+
+    private void refreshExeStackListView() {
+        exeStackListView.getItems().clear();
+        for (Statement o: executionStack.getStack()) {
+
+            exeStackListView.getItems().add(o.toString());
+        }
+    }
+
     private void populateScene2() {
         Label psLabel = new Label("Number of program states");
         int nr = controller.getNoOfPrgStates();
@@ -117,6 +147,8 @@ public class MainPage extends Application{
         heapMemory = programState.heapTable();
         out = programState.out();
         fileTable = programState.fileTable();
+        symbolTable = programState.symTable();
+        executionStack = programState.execStack();
 
         Label heapLabel = new Label("Heap Table");
         heapTableView = new TableView<>();
@@ -147,6 +179,30 @@ public class MainPage extends Application{
         HBox idsLayout = new HBox(10);
         idsLayout.getChildren().addAll(idsLabel,idsListView);
 
+        idsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                lastSelectedID = newValue;
+                refreshSymbolTableView(lastSelectedID);
+            }
+        });
+
+        Label symbolTableLabel = new Label("Symbol Table");
+        symbolTableView = new TableView<>();
+        TableColumn<SymbolTableEntry,String> col1 = new TableColumn<>("Variable");
+        TableColumn<SymbolTableEntry,String> col2 = new TableColumn<>("Value");
+        col1.setCellValueFactory(new PropertyValueFactory<>("variable"));
+        col2.setCellValueFactory(new PropertyValueFactory<>("value"));
+        symbolTableView.setItems(getSymbolTableEntries(symbolTable));
+        symbolTableView.getColumns().addAll(col1,col2);
+        HBox symbolTableLayout = new HBox(10);
+        symbolTableLayout.getChildren().addAll(symbolTableLabel,symbolTableView);
+
+        Label exeStackLabel = new Label("Execution Stack");
+        exeStackListView = new ListView<>();
+        refreshExeStackListView();
+        HBox exeStackLayout = new HBox(20);
+        exeStackLayout.getChildren().addAll(exeStackLabel,exeStackListView);
+
         runButton = new Button("Next step");
         runButton.setOnAction(e -> {
             controller.displayCurrentState();
@@ -156,12 +212,14 @@ public class MainPage extends Application{
             refreshOutListView();
             refreshFileTableListView();
             refreshIdsListView();
+            refreshSymbolTableView(lastSelectedID);
+            refreshExeStackListView();
         });
 
         VBox layout2 = new VBox(10);
         layout2.setPadding(new Insets(20,20,20,20));
-        layout2.getChildren().addAll(psLayout, heapLayout, outLayout, fileLayout, idsLayout, runButton);
-        scene2 = new Scene(layout2,1000,400);
+        layout2.getChildren().addAll(psLayout, heapLayout, outLayout, fileLayout, idsLayout, symbolTableLayout, exeStackLayout, runButton);
+        scene2 = new Scene(layout2,1000,600);
     }
 
     private Example getExample() {

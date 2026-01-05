@@ -2,10 +2,11 @@ package model.adt;
 
 import model.exception.EmptyStackException;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MyStack<T> implements MyIStack<T> {
+public class MyStack<T> implements MyIStack<T>, Iterable<T> {
     private final List<T> elements = new LinkedList<T>();
 
     @Override
@@ -25,6 +26,11 @@ public class MyStack<T> implements MyIStack<T> {
     @Override
     public boolean isEmpty() {
         return elements.isEmpty();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return elements.iterator();
     }
 
     @Override

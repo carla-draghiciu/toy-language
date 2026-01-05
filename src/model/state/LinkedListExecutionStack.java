@@ -26,6 +26,11 @@ public class LinkedListExecutionStack implements ExecutionStack {
     }
 
     @Override
+    public MyStack<Statement> getStack() {
+        return statements;
+    }
+
+    @Override
     public String toString() {
 //        String result = "{ ";
 //        for (int i = 0; i < elements.size() - 1; i++) {
