@@ -70,3 +70,75 @@ Out:       []
 FileTable: {}
 HeapTable: {}
 
+
+    Id:    4
+ExeStack:  { (int a ; (a=5 ; int a)) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    4
+ExeStack:  { int a | (a=5 ; int a) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    4
+ExeStack:  { int a | (a=5 ; int a) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    4
+ExeStack:  { (a=5 ; int a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    4
+ExeStack:  { (a=5 ; int a) }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    4
+ExeStack:  { a=5 | int a }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    4
+ExeStack:  { a=5 | int a }
+SymTable:  {a=0}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    4
+ExeStack:  { int a }
+SymTable:  {a=5}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    4
+ExeStack:  { int a }
+SymTable:  {a=5}
+Out:       []
+FileTable: {}
+HeapTable: {}
+

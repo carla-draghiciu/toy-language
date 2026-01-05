@@ -208,21 +208,35 @@ public class MainPage extends Application{
         exeStackLayout.getChildren().addAll(exeStackLabel,exeStackListView);
 
         runButton = new Button("Next step");
+        Label done = new Label("Program done.");
+        Button backButton = new Button("Back");
+        HBox runLayout = new HBox(10);
+        runLayout.getChildren().add(runButton);
         runButton.setOnAction(e -> {
             controller.displayCurrentState();
-            controller.oneStep();
-            refreshNoPrgStates();
-            refreshHeapTableView();
-            refreshOutListView();
-            refreshFileTableListView();
-            refreshIdsListView();
-            refreshSymbolTableView(lastSelectedID);
-            refreshExeStackListView(lastSelectedID);
+            boolean ran = controller.oneStep();
+            if (!ran) {
+                runLayout.getChildren().add(done);
+                runLayout.getChildren().add(backButton);
+            }
+            else {
+                refreshNoPrgStates();
+                refreshHeapTableView();
+                refreshOutListView();
+                refreshFileTableListView();
+                refreshIdsListView();
+                refreshSymbolTableView(lastSelectedID);
+                refreshExeStackListView(lastSelectedID);
+            }
+        });
+
+        backButton.setOnAction(e -> {
+            window.setScene(scene1);
         });
 
         VBox layout2 = new VBox(10);
         layout2.setPadding(new Insets(20,20,20,20));
-        layout2.getChildren().addAll(psLayout, heapLayout, outLayout, fileLayout, idsLayout, symbolTableLayout, exeStackLayout, runButton);
+        layout2.getChildren().addAll(psLayout, heapLayout, outLayout, fileLayout, idsLayout, symbolTableLayout, exeStackLayout, runLayout);
         scene2 = new Scene(layout2,1000,600);
     }
 
@@ -257,9 +271,9 @@ public class MainPage extends Application{
     }
 
     private void buttonClicked() {
-
         Example ex = getExample();
         controller = ex.controller();
+        lastSelectedID = 0;
         populateScene2();
         window.setScene(scene2);
     }

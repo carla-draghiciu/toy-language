@@ -104,11 +104,17 @@ public final class Controller {
         repository.setProgramList(prgList);
     }
 
-    public void oneStep() {
+    public boolean oneStep() {
         List<ProgramState> prgList = removeCompletedPrograms(repository.getProgramList());
-        oneStepForAllPrg(prgList);
-        GarbageCollector gc = new GarbageCollector();
-        gc.collect(prgList);
+        if (prgList.size() > 0) {
+            oneStepForAllPrg(prgList);
+            GarbageCollector gc = new GarbageCollector();
+            gc.collect(prgList);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public void displayCurrentState() {
