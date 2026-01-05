@@ -1,0 +1,208 @@
+package view.gui;
+
+import controller.Controller;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
+import model.state.*;
+import model.statement.Statement;
+import model.value.Value;
+import view.commands.RunExample;
+import view.examples.Example;
+import view.examples.Examples;
+
+import java.util.List;
+
+
+public class MainPage extends Application{
+    Stage window;
+    Scene scene1;
+    Scene scene2;
+    List<Example> examples = Examples.getExamples();
+
+    // scene1
+    Button startButton;
+    ListView<String> programs;
+
+    // scene2
+    Controller controller;
+    ProgramState programState;
+    Memory heapMemory;
+    Out out;
+    FileTable fileTable;
+
+    TextField noPrgStates;
+    TableView<HeapEntry> heapTableView;
+    ListView<String> outListView;
+    ListView<String> fileTableListView;
+    ListView<Integer> idsListView;
+//    TableView<HeapEntry> symbolTableView;
+//    ListView<String> exeStackListView;
+    Button runButton;
+
+    private void populateScene1() {
+        startButton = new Button("Start");
+        programs = new ListView<>();
+
+        for (int i = 0; i < examples.size(); i++) {
+            var entry = examples.get(i);
+            Statement statement = entry.statement();
+            programs.getItems().add(Integer.toString(i+1) + ". " + statement.toString());
+        }
+        VBox layout = new VBox(10);
+        layout.setPadding(new Insets(20,20,20,20));
+        layout.getChildren().addAll(programs, startButton);
+        scene1 = new Scene(layout, 1000, 400);
+    }
+
+    private ObservableList<HeapEntry> getHeapEntries(Memory heap) {
+        ObservableList<HeapEntry> heapEntries = FXCollections.observableArrayList();
+        for (var h : heap.getHeap().entrySet()) {
+            int adr = h.getKey();
+            Value value = h.getValue();
+
+            heapEntries.add(new HeapEntry(adr, value.toString()));
+        }
+        return heapEntries;
+    }
+
+    private void refreshNoPrgStates() {
+        int nr = controller.getNoOfPrgStates();
+        noPrgStates.setText(Integer.toString(nr));
+    }
+
+    private void refreshHeapTableView() {
+        programState = controller.getLastProgramState();
+        heapTableView.setItems(getHeapEntries(programState.heapTable()));
+    }
+
+    private void refreshOutListView() {
+        outListView.getItems().clear();
+        for (Value o: out.getArrOut()) {
+            outListView.getItems().add(o.toString());
+        }
+    }
+
+    private void refreshFileTableListView() {
+        fileTableListView.getItems().clear();
+        for (var o: fileTable.getFiles().entrySet()) {
+            String file = o.getKey().toString() + " = " + o.getValue().toString();
+            fileTableListView.getItems().add(file);
+        }
+    }
+
+    private void refreshIdsListView() {
+        idsListView.getItems().clear();
+        for (int id : controller.getAllIDs()) {
+            idsListView.getItems().add(id);
+        }
+    }
+
+    private void populateScene2() {
+        Label psLabel = new Label("Number of program states");
+        int nr = controller.getNoOfPrgStates();
+        noPrgStates = new TextField(Integer.toString(nr));
+        HBox psLayout = new HBox(10);
+        psLayout.getChildren().addAll(psLabel, noPrgStates);
+
+        programState = controller.getLastProgramState();
+        heapMemory = programState.heapTable();
+        out = programState.out();
+        fileTable = programState.fileTable();
+
+        Label heapLabel = new Label("Heap Table");
+        heapTableView = new TableView<>();
+        TableColumn<HeapEntry,Integer> column1 = new TableColumn<>("Address");
+        TableColumn<HeapEntry,String> column2 = new TableColumn<>("Value");
+        column1.setCellValueFactory(new PropertyValueFactory<>("address"));
+        column2.setCellValueFactory(new PropertyValueFactory<>("value"));
+        heapTableView.setItems(getHeapEntries(heapMemory));
+        heapTableView.getColumns().addAll(column1,column2);
+        HBox heapLayout = new HBox(10);
+        heapLayout.getChildren().addAll(heapLabel,heapTableView);
+
+        Label outLabel = new Label("Out");
+        outListView = new ListView<>();
+        refreshOutListView();
+        HBox outLayout = new HBox(10);
+        outLayout.getChildren().addAll(outLabel,outListView);
+
+        Label fileLabel = new Label("File Table");
+        fileTableListView = new ListView<>();
+        refreshFileTableListView();
+        HBox fileLayout = new HBox(10);
+        fileLayout.getChildren().addAll(fileLabel,fileTableListView);
+
+        Label idsLabel = new Label("IDs");
+        idsListView = new ListView<>();
+        refreshIdsListView();
+        HBox idsLayout = new HBox(10);
+        idsLayout.getChildren().addAll(idsLabel,idsListView);
+
+        runButton = new Button("Next step");
+        runButton.setOnAction(e -> {
+            controller.displayCurrentState();
+            controller.oneStep();
+            refreshNoPrgStates();
+            refreshHeapTableView();
+            refreshOutListView();
+            refreshFileTableListView();
+            refreshIdsListView();
+        });
+
+        VBox layout2 = new VBox(10);
+        layout2.setPadding(new Insets(20,20,20,20));
+        layout2.getChildren().addAll(psLayout, heapLayout, outLayout, fileLayout, idsLayout, runButton);
+        scene2 = new Scene(layout2,1000,400);
+    }
+
+    private Example getExample() {
+        String program = "";
+        program = programs.getSelectionModel().getSelectedItem().toString();
+
+        String[] parts = program.split("[.]");
+//        System.out.println(parts[0]);
+        int index = Integer.parseInt(parts[0]) - 1;
+
+        Example ex = examples.get(index);
+//        System.out.println(ex.toString());
+        return ex;
+    }
+
+    @Override
+    public void start(Stage stage) {
+        window = stage;
+        window.setTitle("Toy Language");
+
+        // scene1
+        populateScene1();
+        startButton.setOnAction(e -> buttonClicked());
+
+        // scene2
+//        populateScene2();
+
+
+        window.setScene(scene1);
+        window.show();
+    }
+
+    private void buttonClicked() {
+
+        Example ex = getExample();
+        controller = ex.controller();
+        populateScene2();
+        window.setScene(scene2);
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}

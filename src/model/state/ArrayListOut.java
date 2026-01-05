@@ -15,6 +15,11 @@ public class ArrayListOut implements Out {
     }
 
     @Override
+    public MyList<Value> getArrOut() {
+        return values;
+    }
+
+    @Override
     public String toString() {
         return "Out:       " + values.toString() + "\n";
     }

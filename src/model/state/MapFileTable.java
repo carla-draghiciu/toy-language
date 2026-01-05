@@ -24,6 +24,11 @@ public class MapFileTable implements FileTable {
     }
 
     @Override
+    public MyDictionary<StringValue, BufferedReader> getFiles() {
+        return fileTable;
+    }
+
+    @Override
     public void removeFile(StringValue name) {
         fileTable.remove(name);
     }

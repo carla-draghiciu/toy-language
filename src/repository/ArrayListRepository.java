@@ -18,6 +18,35 @@ public class ArrayListRepository implements Repository {
     }
 
     @Override
+    public int getSize() {
+        return programStates.size();
+    }
+
+    @Override
+    public ProgramState getProgramState(int id) {
+        for (ProgramState programState : programStates) {
+            if (programState.getId() == id) {
+                return programState;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public List<Integer> getIds() {
+        List<Integer> ids = new ArrayList<>();
+        for (ProgramState programState : programStates) {
+            ids.add(programState.getId());
+        }
+        return ids;
+    }
+
+    @Override
+    public ProgramState getLast() {
+        return programStates.get(programStates.size() - 1);
+    }
+
+    @Override
     public void addProgramState(ProgramState state) {
         programStates.add(state);
     }

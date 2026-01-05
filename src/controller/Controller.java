@@ -21,6 +21,22 @@ public final class Controller {
         this.repository = repository;
         this.executor = Executors.newFixedThreadPool(2);    }
 
+    public int getNoOfPrgStates() {
+        return this.repository.getSize();
+    }
+
+    public List<Integer> getAllIDs() {
+        return this.repository.getIds();
+    }
+
+    public ProgramState getLastProgramState() {
+        return this.repository.getLast();
+    }
+
+    public ProgramState getProgramState(int id) {
+        return this.repository.getProgramState(id);
+    }
+
     public void addNewProgram(Statement statement) {
         try {
             statement.typecheck(new MyDictionary<>());
@@ -86,7 +102,13 @@ public final class Controller {
 
         executor.shutdownNow();
         repository.setProgramList(prgList);
+    }
 
+    public void oneStep() {
+        List<ProgramState> prgList = removeCompletedPrograms(repository.getProgramList());
+        oneStepForAllPrg(prgList);
+        GarbageCollector gc = new GarbageCollector();
+        gc.collect(prgList);
     }
 
     public void displayCurrentState() {
