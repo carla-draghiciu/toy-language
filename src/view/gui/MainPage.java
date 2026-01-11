@@ -207,26 +207,35 @@ public class MainPage extends Application{
         HBox exeStackLayout = new HBox(20);
         exeStackLayout.getChildren().addAll(exeStackLabel,exeStackListView);
 
+
         runButton = new Button("Next step");
         Label done = new Label("Program done.");
         Button backButton = new Button("Back");
         HBox runLayout = new HBox(10);
         runLayout.getChildren().add(runButton);
+
         runButton.setOnAction(e -> {
-            controller.displayCurrentState();
-            boolean ran = controller.oneStep();
-            if (!ran) {
-                runLayout.getChildren().add(done);
+            try {
+                controller.displayCurrentState();
+                boolean ran = controller.oneStep();
+                if (!ran) {
+                    runLayout.getChildren().add(done);
+                    runLayout.getChildren().add(backButton);
+                    runLayout.getChildren().remove(runButton);
+                } else {
+                    refreshNoPrgStates();
+                    refreshHeapTableView();
+                    refreshOutListView();
+                    refreshFileTableListView();
+                    refreshIdsListView();
+                    refreshSymbolTableView(lastSelectedID);
+                    refreshExeStackListView(lastSelectedID);
+                }
+            } catch (Exception ex) {
+                Label error = new Label("Error: " + ex.getMessage());
+                runLayout.getChildren().add(error);
                 runLayout.getChildren().add(backButton);
-            }
-            else {
-                refreshNoPrgStates();
-                refreshHeapTableView();
-                refreshOutListView();
-                refreshFileTableListView();
-                refreshIdsListView();
-                refreshSymbolTableView(lastSelectedID);
-                refreshExeStackListView(lastSelectedID);
+                runLayout.getChildren().remove(runButton);
             }
         });
 
