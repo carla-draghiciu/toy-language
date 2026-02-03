@@ -14,7 +14,7 @@ public class NoOperationStatement implements Statement {
 
     @Override
     public MyDictionary<String, Type> typecheck(MyDictionary<String,Type> typeEnv) {
-        return null;
+        return typeEnv;
     }
 
     @Override
