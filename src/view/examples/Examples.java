@@ -286,6 +286,33 @@ public class Examples {
                 )
         );
 
+        // Ref int a; new(a,20);
+        // (for(v=0;v<3;v=v+1) fork(print(v);v=v*rh(a)));
+        // print(rh(a))     The final Out should be {0,1,2,20}
+        Repository repo16 = new ArrayListRepository("src/logs/log16.txt");
+        Controller ctr16 = new Controller(repo16);
+        Statement ex16 = new CompoundStatement(
+                new VariableDeclarationStatement(new RefType(new IntType()), "a"),
+                new CompoundStatement(
+                        new NewStatement("a", new ValueExpression(new IntValue(20))),
+                        new CompoundStatement(
+                                new ForStatement(
+                                        "v",
+                                        new ValueExpression(new IntValue(0)),
+                                        new ValueExpression(new IntValue(3)),
+                                        new ArithmeticExpression(new VariableExpression("v"), new ValueExpression(new IntValue(1)), '+'),
+                                        new ForkStatement(new CompoundStatement(
+                                                new PrintStatement(new VariableExpression("v")),
+                                                new AssignmentStatement("v",
+                                                        new ArithmeticExpression(new VariableExpression("v"), new ReadHeapExpression(new VariableExpression("a")), '*')
+                                                        )
+                                                ))
+                                ),
+                                new PrintStatement(new ReadHeapExpression(new VariableExpression("a")))
+                        )
+                )
+        );
+
         add(ex1, ctr1);
         add(ex2, ctr2);
         add(ex3, ctr3);
@@ -301,6 +328,7 @@ public class Examples {
         add(ex13, ctr13);
         add(ex14, ctr14);
         add(ex15, ctr15);
+        add(ex16, ctr16);
 
         return programs;
     }

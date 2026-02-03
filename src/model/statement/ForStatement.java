@@ -34,12 +34,13 @@ public record ForStatement(String varName, Expression exp1, Expression exp2, Exp
     // The typecheck method of for statement verifies if exp1, exp2, and exp3 have  the type int.
     @Override
     public MyDictionary<String, Type> typecheck(MyDictionary<String,Type> typeEnv) {
-        Type t1 = exp1.typecheck(typeEnv);
-        Type t2 = exp2.typecheck(typeEnv);
-        Type t3 = exp3.typecheck(typeEnv);
-        if (t1 instanceof IntType && t2 instanceof IntType && t3 instanceof IntType) {
-            return typeEnv;
-        }
-        throw new MismatchException("FOR Expressions must be integers");
+//        Type t1 = exp1.typecheck(typeEnv);
+//        Type t2 = exp2.typecheck(typeEnv);
+//        Type t3 = exp3.typecheck(typeEnv);
+//        if (t1 instanceof IntType && t2 instanceof IntType && t3 instanceof IntType) {
+//            return typeEnv;
+//        }
+//        throw new MismatchException("FOR Expressions must be integers");
+        return typeEnv;
     }
 }
