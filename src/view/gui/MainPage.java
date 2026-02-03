@@ -41,6 +41,7 @@ public class MainPage extends Application{
     SymbolTable symbolTable;
     private int lastSelectedID = 0;
     ExecutionStack executionStack;
+    LockTable lockTable;
 
     TextField noPrgStates;
     TableView<HeapEntry> heapTableView;
@@ -50,6 +51,7 @@ public class MainPage extends Application{
     TableView<SymbolTableEntry> symbolTableView;
     ListView<String> exeStackListView;
     Button runButton;
+    TableView<LockTableEntry> lockTableView;
 
     private void populateScene1() {
         startButton = new Button("Start");
@@ -139,6 +141,22 @@ public class MainPage extends Application{
         }
     }
 
+    private ObservableList<LockTableEntry> getLockEntries(LockTable lockTable) {
+        ObservableList<LockTableEntry> Entries = FXCollections.observableArrayList();
+        for (var h : lockTable.getDict().entrySet()) {
+            int adr = h.getKey();
+            int value = h.getValue();
+
+            Entries.add(new LockTableEntry(adr, value));
+        }
+        return Entries;
+    }
+
+    private void refreshLockTableView() {
+        programState = controller.getLastProgramState();
+        lockTableView.setItems(getLockEntries(programState.lockTable()));
+    }
+
     private void populateScene2() {
         Label psLabel = new Label("Number of program states");
         int nr = controller.getNoOfPrgStates();
@@ -152,6 +170,7 @@ public class MainPage extends Application{
         fileTable = programState.fileTable();
         symbolTable = programState.symTable();
         executionStack = programState.execStack();
+        lockTable = programState.lockTable();
 
         Label heapLabel = new Label("Heap Table");
         heapTableView = new TableView<>();
@@ -163,6 +182,17 @@ public class MainPage extends Application{
         heapTableView.getColumns().addAll(column1,column2);
         HBox heapLayout = new HBox(10);
         heapLayout.getChildren().addAll(heapLabel,heapTableView);
+
+        Label lockLabel = new Label("Lock Table");
+        lockTableView = new TableView<>();
+        TableColumn<LockTableEntry,Integer> c1 = new TableColumn<>("Location");
+        TableColumn<LockTableEntry,Integer> c2 = new TableColumn<>("Value");
+        c1.setCellValueFactory(new PropertyValueFactory<>("location"));
+        c2.setCellValueFactory(new PropertyValueFactory<>("value"));
+        lockTableView.setItems(getLockEntries(lockTable));
+        lockTableView.getColumns().addAll(c1,c2);
+        HBox lockLayout = new HBox(10);
+        lockLayout.getChildren().addAll(lockLabel,lockTableView);
 
         Label outLabel = new Label("Out");
         outListView = new ListView<>();
@@ -230,6 +260,7 @@ public class MainPage extends Application{
                     refreshIdsListView();
                     refreshSymbolTableView(lastSelectedID);
                     refreshExeStackListView(lastSelectedID);
+                    refreshLockTableView();
                 }
             } catch (Exception ex) {
                 Label error = new Label("Error: " + ex.getMessage());
@@ -245,7 +276,7 @@ public class MainPage extends Application{
 
         VBox layout2 = new VBox(10);
         layout2.setPadding(new Insets(20,20,20,20));
-        layout2.getChildren().addAll(psLayout, heapLayout, outLayout, fileLayout, idsLayout, symbolTableLayout, exeStackLayout, runLayout);
+        layout2.getChildren().addAll(psLayout, heapLayout, outLayout, fileLayout, idsLayout, symbolTableLayout, exeStackLayout, lockLayout, runLayout);
         scene2 = new Scene(layout2,1000,600);
     }
 

@@ -7,6 +7,7 @@ import model.state.ProgramState;
 import model.type.IntType;
 import model.type.Type;
 import model.value.IntValue;
+import model.value.Value;
 
 public record NewLockStatement(String varName) implements Statement {
     @Override
@@ -36,6 +37,11 @@ public record NewLockStatement(String varName) implements Statement {
 
     @Override
     public MyDictionary<String, Type> typecheck(MyDictionary<String,Type> typeEnv) {
-        return typeEnv;
+        //  Implement the method typecheck for the statement newLock(var) to
+        //  verify if  var has the type int.
+        if (typeEnv.getElement(varName) instanceof IntType) {
+            return typeEnv;
+        }
+        throw new MismatchException("Variable is not int");
     }
 }

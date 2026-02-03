@@ -56,6 +56,11 @@ public class MapLockTable implements LockTable {
     }
 
     @Override
+    public MyDictionary<Integer, Integer> getDict() {
+        return lockTable;
+    }
+
+    @Override
     public String toString() {
         return "LockTable: " + lockTable.toString() + "\n";
     }

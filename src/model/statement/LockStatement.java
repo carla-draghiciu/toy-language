@@ -46,6 +46,11 @@ public record LockStatement(String varName) implements Statement {
 
     @Override
     public MyDictionary<String, Type> typecheck(MyDictionary<String,Type> typeEnv) {
-        return typeEnv;
+        // Implement the method typecheck for the statement lock(var) to
+        // verify if var has the type int
+        if (typeEnv.getElement(varName) instanceof IntType) {
+            return typeEnv;
+        }
+        throw new MismatchException("Variable " + varName + " is not a int");
     }
 }
