@@ -14,9 +14,10 @@ public record ForkStatement(Statement statement) implements Statement {
         Out newO = state.out();
         FileTable newFT = state.fileTable();
         Memory newM = state.heapTable();
+        LockTable newL = state.lockTable();
 
         newES.push(statement);
-        var ps = new ProgramState(newES, newST, newO, newFT, newM);
+        var ps = new ProgramState(newES, newST, newO, newFT, newM, newL);
         return ps;
     }
 

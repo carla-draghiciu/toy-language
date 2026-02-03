@@ -47,7 +47,7 @@ public final class Controller {
         ExecutionStack execStack = new LinkedListExecutionStack();
         execStack.push(statement);
 
-        ProgramState newState = new ProgramState(execStack, new MapSymbolTable(), new ArrayListOut(), new MapFileTable(), new HeapMemory());
+        ProgramState newState = new ProgramState(execStack, new MapSymbolTable(), new ArrayListOut(), new MapFileTable(), new HeapMemory(), new MapLockTable());
         repository.addProgramState(newState);
     }
 

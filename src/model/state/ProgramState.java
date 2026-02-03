@@ -12,13 +12,15 @@ public class ProgramState {
     private final Out out;
     private final FileTable fileTable;
     private final Memory heapTable;
+    private final LockTable lockTable;
 
-    public ProgramState(ExecutionStack execStack, SymbolTable symTable, Out out, FileTable fileTable, Memory heapTable) {
+    public ProgramState(ExecutionStack execStack, SymbolTable symTable, Out out, FileTable fileTable, Memory heapTable, LockTable lockTable) {
         this.execStack = execStack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
         this.heapTable = heapTable;
+        this.lockTable = lockTable;
 
         this.id = prevID++;
     }
@@ -45,6 +47,10 @@ public class ProgramState {
 
     public Memory heapTable() {
         return heapTable;
+    }
+
+    public LockTable lockTable() {
+        return lockTable;
     }
 
     @Override

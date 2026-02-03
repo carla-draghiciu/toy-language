@@ -1102,3 +1102,1107 @@ Out:       [0, 1, 2, 20]
 FileTable: {}
 HeapTable: {1=20}
 
+
+    Id:    14
+ExeStack:  { (Ref(int) a ; (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { Ref(int) a | (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a)))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { Ref(int) a | (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a)))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a)))) }
+SymTable:  {a=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a)))) }
+SymTable:  {a=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { new(a, 20) | (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))) }
+SymTable:  {a=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { new(a, 20) | (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))) }
+SymTable:  {a=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (int v ; (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (int v ; (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { int v | (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { int v | (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=0 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=0 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=1, locationType=int], v=20}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1, 2]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1, 2]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1, 2]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1, 2]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1, 2, 20]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=1, locationType=int], v=40}
+Out:       [0, 1, 2, 20]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (Ref(int) a ; (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { Ref(int) a | (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a)))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { Ref(int) a | (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a)))) }
+SymTable:  {}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a)))) }
+SymTable:  {a=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { (new(a, 20) ; (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a)))) }
+SymTable:  {a=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { new(a, 20) | (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))) }
+SymTable:  {a=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { new(a, 20) | (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))) }
+SymTable:  {a=RefValue[address=0, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {}
+
+
+    Id:    14
+ExeStack:  { (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] ; print(rH(a))) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { ForStatement[varName=v, exp1=0, exp2=3, exp3=v + 1, statement=fork((print(v) ; v=v * rH(a)))] | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (int v ; (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (int v ; (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { int v | (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { int v | (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int]}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (v=0 ; (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1))) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=0 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=0 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       []
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    15
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=1, locationType=int], v=0}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (fork((print(v) ; v=v * rH(a))) ; v=v + 1) | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=1}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    16
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=1, locationType=int], v=20}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { fork((print(v) ; v=v * rH(a))) | v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { v=v + 1 | (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { (print(v) ; v=v * rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { (while(v < 3) (fork((print(v) ; v=v * rH(a))) ; v=v + 1)) | print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { print(v) | v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1, 2]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1, 2]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  { print(rH(a)) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1, 2]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  { v=v * rH(a) }
+SymTable:  {a=RefValue[address=1, locationType=int], v=2}
+Out:       [0, 1, 2]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    14
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=1, locationType=int], v=3}
+Out:       [0, 1, 2, 20]
+FileTable: {}
+HeapTable: {1=20}
+
+
+    Id:    17
+ExeStack:  {  }
+SymTable:  {a=RefValue[address=1, locationType=int], v=40}
+Out:       [0, 1, 2, 20]
+FileTable: {}
+HeapTable: {1=20}
+
