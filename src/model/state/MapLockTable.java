@@ -54,4 +54,9 @@ public class MapLockTable implements LockTable {
         lockTable.remove(key);
         lockTable.add(key, id);
     }
+
+    @Override
+    public String toString() {
+        return "LockTable: " + lockTable.toString() + "\n";
+    }
 }

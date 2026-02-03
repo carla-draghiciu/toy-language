@@ -66,9 +66,11 @@ public class ArrayListRepository implements Repository {
         String o = programStates.getFirst().out().toString();
         String ft = programStates.getFirst().fileTable().toString();
         String ht = programStates.getFirst().heapTable().toString();
+        String lt = programStates.getFirst().lockTable().toString();
         res += o;
         res += ft;
         res += ht;
+        res += lt;
         res += "\n";
         return res;
     }

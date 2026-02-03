@@ -66,7 +66,8 @@ public class ProgramState {
                 symTable.toString() +
                 out.toString() +
                 fileTable.toString() +
-                heapTable.toString();
+                heapTable.toString() +
+                lockTable.toString();
     }
 
     public boolean isNotCompleted() {
