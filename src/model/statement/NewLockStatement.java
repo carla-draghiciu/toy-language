@@ -15,18 +15,22 @@ public record NewLockStatement(String varName) implements Statement {
         // if var exists in SymTable1 and has the type int
         // then SymTable2 = update(SymTable1,var, newfreelocation)
         // else print an error and stop the execution.
-        state.lockTable().add(-1);
-        int location = state.lockTable().getNewFreeLocation();
-        if (state.symTable().isDefined(varName)) {
-            if (state.symTable().getVariableType(varName) instanceof IntType) {
-                state.symTable().setValue(varName, new IntValue(location));
+        state.lockTable().getLock().lock();
+        try {
+            state.lockTable().add(-1);
+            int location = state.lockTable().getNewFreeLocation();
+            if (state.symTable().isDefined(varName)) {
+                if (state.symTable().getVariableType(varName) instanceof IntType) {
+                    state.symTable().setValue(varName, new IntValue(location));
+                } else {
+                    throw new MismatchException("Variable is not int");
+                }
             } else {
-                throw new MismatchException("Variable is not int");
+                throw new UndeclaredException("Variable is not defined");
             }
-        } else {
-            throw new UndeclaredException("Variable is not defined");
+        } finally {
+            state.lockTable().getLock().unlock();
         }
-
         return null;
     }
 
